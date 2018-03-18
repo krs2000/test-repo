@@ -1,9 +1,9 @@
 import React from "react";
-import a from "../img/clients/1.png";
-import b from "../img/clients/2.png";
-import c from "../img/clients/3.png";
-import d from "../img/clients/4.png";
-import e from "../img/clients/5.png";
+import a from "../img/Clients/1.png";
+import b from "../img/Clients/2.png";
+import c from "../img/Clients/3.png";
+import d from "../img/Clients/4.png";
+import e from "../img/Clients/5.png";
 
 const ClientsStyle = {
   color: "white",
