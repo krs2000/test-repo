@@ -127,12 +127,8 @@ scrollToElement('#content',{
 });};
 
 scrollUp=()=>{
-scrollToElement('#content',{
-   offset: 0,
-   ease: 'linear',
-    duration: 1000,
-    align : "top"
-});}
+window.scrollTo(0,0);
+}
 
   render() {
     return (
