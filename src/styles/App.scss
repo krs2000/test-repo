@@ -15,10 +15,13 @@ nav {
    min-height:64px;
   padding: 5px 90px 5px 10px;
   border:1px solid black;
-  border-radius: 10px;
+  // border-radius: 5px;
   .logo{
+    display: flex;
+    justify-content:center;
+    align-items:center;
   img{
-   width:100%;
+   width:85%;
      min-width:150px;
 
   }

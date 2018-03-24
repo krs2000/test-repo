@@ -38,15 +38,15 @@ h2 {
   display: flex;
   justify-content: center; }
   .cover .mainVideoCotainer {
-    height: 110vh;
+    height: 120vh;
     overflow: hidden; }
     .cover .mainVideoCotainer .mainVideo {
-      height: 110vh;
+      height: 120vh;
       width: auto; }
   .cover .mainVideouttonsContainer {
     height: auto;
     position: absolute;
-    top: 65%;
+    top: 55%;
     left: 0;
     text-align: center;
     cursor: pointer;
@@ -66,33 +66,29 @@ h2 {
     padding: 15px 25px; }
 
 .videoList {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr; }
-  .videoList .miniVideoConatainer {
-    overflow: hidden;
-    align-items: stretch;
-    position: relative;
-    display: flex;
-    justify-content: center; }
-    .videoList .miniVideoConatainer .miniVideo {
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      cursor: pointer;
-      transition: all 0.5s ease-in-out;
-      filter: grayscale(80%); }
-      .videoList .miniVideoConatainer .miniVideo:hover {
-        -moz-transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-        filter: grayscale(0); }
-    .videoList .miniVideoConatainer .mask {
-      top: 40%;
-      left: 45%;
-      position: absolute; }
-      .videoList .miniVideoConatainer .mask img {
-        width: 50%; }
+  width: 100vw;
+  column-gap: 0;
+  column-count: 3; }
+  .videoList div {
+    width: 33.33vw;
+    display: inline-block;
+    overflow: hidden; }
+    .videoList div img {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      padding: 0 0.2em;
+      max-height: 50vh;
+      align: middle;
+      transition: 0.8s;
+      opacity: 0.9;
+      filter: grayscale(50%); }
+  .videoList:hover img {
+    opacity: 0.8;
+    filter: grayscale(80%); }
+  .videoList:hover img:hover {
+    opacity: 1;
+    filter: grayscale(0); }
 
 .clients {
   background-color: black;
@@ -161,17 +157,14 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  flex-direction: column;
   background-color: black;
   cursor: pointer;
   color: white; }
-  .footer a i {
-    color: white;
-    height: 30px; }
   .footer img {
     opacity: 0.9;
-    width: 40px;
-    margin: 0 30px;
+    width: 64px;
+    margin: 30px 30px;
     transition: all 0.2s ease-in-out; }
     .footer img:hover {
       opacity: 1;
@@ -286,22 +279,12 @@ input[type="submit"]:hover {
   height: 46.511627907vw; }
 
 @media only screen and (max-width: 900px) {
-  .videoList {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto auto auto auto auto; }
-
   .modal-content {
     margin: 50% auto;
     /* 15% from the top and centered */ } }
 @media only screen and (max-device-width: 900px) {
   h2 {
     font-size: 40px; }
-
-  .videoList {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; }
 
   .modal-content {
     margin: 50% auto;

@@ -27,8 +27,6 @@ h2 {
   font-size: 30px;
 }
 
-
-
 #spinner {
   background: url("../img/spinner.gif") no-repeat scroll center center #fff;
   position: absolute;
@@ -36,8 +34,6 @@ h2 {
   width: 100vw;
   z-index: 99;
 }
-
-
 
 .cover {
   height: auto;
@@ -48,12 +44,11 @@ h2 {
   display: flex;
   justify-content: center;
   .mainVideoCotainer {
- 
-    height: 110vh;
-   
+    height: 120vh;
+
     overflow: hidden;
     .mainVideo {
-        height: 110vh;
+      height: 120vh;
       width: auto;
     }
   }
@@ -61,70 +56,120 @@ h2 {
   .mainVideouttonsContainer {
     height: auto;
     position: absolute;
-    top: 65%;
-   left:0;
+    top: 55%;
+    left: 0;
     text-align: center;
     cursor: pointer;
     width: 3%;
     padding: 5%;
-    display:flex;
-    flex-wrap:wrap;
-    width:auto;
-
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
   }
   .arrow {
-margin-left:20px;
-  color:white;
+    margin-left: 20px;
+    color: white;
   }
-  .coverBtn{
-        // 
-// text-shadow: horizontal-offset vertical-offset blur color;
-// text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
-    margin:5px ;
-    color:white;
-    background-color:transparent;
-    border:2px solid white;
+  .coverBtn {
+    //
+    // text-shadow: horizontal-offset vertical-offset blur color;
+    // text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    margin: 5px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
     // box-shadow : 2px 4px 3px rgba(0,0,0,0.3);
-    padding:15px 25px;
+    padding: 15px 25px;
   }
 }
 
 .videoList {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  .miniVideoConatainer {
-    // width: 100%;
-    // height: 100%;
-    overflow: hidden;
-    align-items: stretch;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    .miniVideo {
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      cursor: pointer;
-      transition: all 0.5s ease-in-out;
-      filter: grayscale(80%);
-      &:hover {
-        -moz-transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-        filter: grayscale(0);
-      }
-    }
-    .mask {
-      top: 40%;
-      left: 45%;
-      position: absolute;
-      img {
-        width: 50%;
-      }
-    }
+  // display: flex;
+  // flex-direction: column;
+  // flex-wrap: wrap;
+  // height: 100vw;
+  width: 100vw;
+  // max-height: 1100px;
+  // font-size: 0;
+ column-gap:0;
+  column-count: 3;
+
+  // column-fill: auto;
+  // column-span: all; 
+
+  div {
+
+
+     width: 33.33vw;
+     display: inline-block;
+     overflow: hidden;
+    img{
+      display:table-cell;
+  vertical-align:middle;
+   text-align:center;
+  padding:0 0.2em;
+  max-height:50vh;
+   align:middle;
+    transition: 0.8s;
+    opacity: 0.9;
+    filter: grayscale(50%);
+  }   }
+
+  &:hover img {
+    opacity: 0.8;
+    filter: grayscale(80%);
+  }
+  &:hover img:hover {
+    opacity: 1;
+       filter: grayscale(0);
   }
 }
+
+// /* fallback for earlier versions of Firefox */
+
+// @supports not (flex-wrap: wrap) {
+//   div#masonry {
+//     display: block;
+//   }
+//   div#masonry img {
+//     display: inline-block;
+//     vertical-align: top;
+//   }
+// }
+
+// .miniVideoConatainer {
+//   display:flex;
+//   flex-direction:column;
+//   width:33.3vw;
+//   width: 100%;
+//   overflow: hidden;
+//   align-items: stretch;
+//   position: relative;
+
+//   .miniVideo {
+
+//     height:100%;
+//     z-index: 1;
+//     cursor: pointer;
+//     transition: all 0.5s ease-in-out;
+//     filter: grayscale(80%);
+//     &:hover {
+//       -moz-transform: scale(1.1);
+//       -webkit-transform: scale(1.1);
+//       transform: scale(1.1);
+//       filter: grayscale(0);
+//     }
+//   }
+
+//   .mask {
+//     top: 40%;
+//     left: 45%;
+//     position: absolute;
+//     img {
+//       width: 50%;
+//     }
+// }
+
 
 .clients {
   background-color: black;
@@ -188,43 +233,39 @@ margin-left:20px;
 }
 
 .contact {
-  color:white;
+  color: white;
   height: 100vh;
   display: flex;
   // justify-content: center;
   align-items: center;
   flex-direction: column;
-  h2{
-    margin:75px;
+  h2 {
+    margin: 75px;
   }
-  .contactIconsContainer{
-    display:flex;
-    align-items:center;
-    img{
-      width:32px;
+  .contactIconsContainer {
+    display: flex;
+    align-items: center;
+    img {
+      width: 32px;
       margin: 5vh 1vw;
     }
   }
 }
 
-
-
 .footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
+ flex-direction:column;
   background-color: black;
   cursor: pointer;
-  color:white;
-  a i{
-    color:white;
-    height:30px;
-  }
+  color: white;
+
+
   img {
     opacity: 0.9;
-    width: 40px;
-    margin: 0 30px;
+    width: 64px;
+    margin: 30px 30px;
     transition: all 0.2s ease-in-out;
     &:hover {
       opacity: 1;
@@ -309,11 +350,11 @@ input[type="submit"] {
   margin: 5px auto;
   opacity: 0.9;
   font-weight: bold;
-  border:1px solid white;
+  border: 1px solid white;
 }
 
 input[type="submit"]:hover {
- background-color: lighten(black,10%);
+  background-color: lighten(black, 10%);
 }
 
 .modal {
@@ -364,36 +405,45 @@ input[type="submit"]:hover {
   }
 }
 
-
-
 /////////////////////////////   SMALL SCREENS  //////////////////////////////////////
 @media only screen and (max-width: 900px) {
-  .videoList {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto auto auto auto auto;
-  }
+  // .videoList {
+  //   display: grid;
+  //   grid-template-columns: 1fr;
+  //   grid-template-rows: auto auto auto auto auto auto auto auto auto;
+  // }
+//   .videoList {
+
+
+//   img {
+//     max-width: 50vw;
+
+//   }
+// }
 
   .modal-content {
     margin: 50% auto;
     /* 15% from the top and centered */
   }
-
-
 }
 
 @media only screen and (max-device-width: 900px) {
   h2 {
     font-size: 40px;
   }
+// .videoList {
 
 
+//   img {
+//     max-width: 100vw;
 
-  .videoList {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  }
+//   }
+// }
+  // .videoList {
+  //   display: grid;
+  //   grid-template-columns: 1fr;
+  //   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  // }
 
   .modal-content {
     margin: 50% auto;

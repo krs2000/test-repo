@@ -12,11 +12,14 @@ nav {
   min-width: 200px;
   min-height: 64px;
   padding: 5px 90px 5px 10px;
-  border: 1px solid black;
-  border-radius: 10px; }
-  nav .logo img {
-    width: 100%;
-    min-width: 150px; }
+  border: 1px solid black; }
+  nav .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    nav .logo img {
+      width: 85%;
+      min-width: 150px; }
 
 nav input + label {
   position: fixed;
