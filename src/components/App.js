@@ -23,56 +23,16 @@ class App extends Component {
 
   returnNavigation = () => {
     return (
-      <nav className="navigationBar">
-        <img
+      <nav ><div className="logo">
+  <img
           src={Logo}
           alt="logo"
-          className="logo"
+          
           onClick={() => {
             this.setState({ activeTab: "Home" });
           }}
-        />
-        <div className="bigNav">
-          <a
-            className="videosLink"
-            onClick={() => {
-              this.setState({ activeTab: "Videos" });
-              this.scrollDown()
-            }}
-          >
-            Videos
-          </a>
-          <span />
-          <a
-            className="aboutLink "
-            onClick={() => {
-              this.setState({ activeTab: "About" });
-              this.scrollUp();
-            }}
-          >
-            About
-          </a>
-          <span />
-          <a
-            className="clientsLink"
-            onClick={() => {
-              this.setState({ activeTab: "Clients" });
-              this.scrollUp();
-            }}
-          >
-            Clients
-          </a>
-          <span />
-          <a
-            className="contactLink"
-            onClick={() => {
-              this.setState({ activeTab: "Contact" });
-              this.scrollUp();
-            }}
-          >
-            Contact
-          </a>
-        </div>
+        /></div>
+  
         <div className="mobileNav">
           <input id="burger" type="checkbox" />
           <label htmlFor="burger">
@@ -95,6 +55,7 @@ class App extends Component {
                 <a className="contactLink">Contact</a>
               </li>
             </ul>
+            <Footer/>
           </div>
         </div>
       </nav>
@@ -110,7 +71,9 @@ class App extends Component {
               <source src={Video} type="video/mp4" />
             </video>
           </div>
-          <img src={Arrow} className="floater arrow" alt="arrow" onClick={this.scrollDown} />
+          <div className="mainVideouttonsContainer"><button class="coverBtn">SHOWREEL</button><button class="coverBtn">CONTACT</button>
+<div className="arrow">
+<i className="fa fa-arrow-circle-down  fa-4x pulse"></i></div></div>
         </section>
         <MiniVideos />
       </div>
