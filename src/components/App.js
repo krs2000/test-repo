@@ -11,60 +11,74 @@ import Clients from "./Clients";
 // import {MyInfiniteScrollExample} from "./MiniVideoss"
 import MiniVideos from "./VideosContainer";
 import Sierakowice from "../img/mini/gminaSierakowice.jpg";
-import scrollToElement from 'scroll-to-element'
+import scrollToElement from "scroll-to-element";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTab: "Home"
+      activeTab: "Home",
+      cover: true
     };
+  }
+  componentDidMount() {
+    if(this.state.activeTab="Home"){
+    document.addEventListener("scroll", () =>
+      this.setState({ activeTab: "Videos" })
+    );}
   }
 
   returnNavigation = () => {
     return (
-      <nav ><div className="logo">
-  <img
-          src={Logo}
-          alt="logo"
-          
-          onClick={() => {
-            this.setState({ activeTab: "Home" });
-          }}
-        />
-           <div className="mobileNav">
-        
-          <input id="burger" type="checkbox" />
-          <label htmlFor="burger">
-            <span />
-            <span />
-            <span />
-          </label>
-          <div class="menuListContainer">
-            <ul>
-              <li>
-                <a className="videosLink">Videos</a>
-              </li>
-              <li>
-                <a className="aboutLink ">About</a>
-              </li>
-              <li>
-                <a className="clientsLink">Clients</a>
-              </li>
-              <li>
-                <a className="contactLink">Contact</a>
-              </li>
-            </ul>
-         
+      <nav>
+        <div className="logo">
+          <img
+            src={Logo}
+            alt="logo"
+            onClick={() => {
+              this.setState({ activeTab: "Home" });
+            }}
+          />
+          <div className="mobileNav">
+            <input id="burger" type="checkbox" />
+            <label htmlFor="burger">
+              <span />
+              <span />
+              <span />
+            </label>
+            <div className="menuListContainer">
+              <ul>
+                <li>
+                  <a
+                    className="videosLink"
+                    onClick={() => {
+                      this.setState({ activeTab: "Videos" });
+                      var burger = document.getElementById("burger");
+                      burger.checked = false;
+                      this.scrollDown();
+                    }}
+                  >
+                    Videos
+                  </a>
+                </li>
+                <li>
+                  <a className="aboutLink ">About</a>
+                </li>
+                <li>
+                  <a className="clientsLink">Clients</a>
+                </li>
+                <li>
+                  <a className="contactLink">Contact</a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div></div>
-  
-
+        </div>
       </nav>
     );
   };
 
-  returnMainVideo = () => {
+  returnMainVideoStart = () => {
     return (
       <div>
         <section id="cover" className="cover">
@@ -73,38 +87,49 @@ class App extends Component {
               <source src={Video} type="video/mp4" />
             </video>
           </div>
-          <div className="mainVideouttonsContainer"><button class="coverBtn">SHOWREEL</button><button class="coverBtn">CONTACT</button>
-<div className="arrow">
-<i className="fa fa-arrow-circle-down  fa-4x pulse"></i></div></div>
+          <div className="mainVideouttonsContainer">
+            <button className="coverBtn">SHOWREEL</button>
+            <button className="coverBtn">CONTACT</button>
+            <div
+              className="arrow"
+              onClick={() => {
+                this.setState({ activeTab: "Videos" });
+                this.scrollDown(), 1000;
+              }}
+            >
+              <i className="fa fa-arrow-circle-down  fa-4x pulse" />
+            </div>
+          </div>
         </section>
-        <MiniVideos />
       </div>
     );
   };
 
+  scrollDown = () => {
+    scrollToElement("#cover", {
+      offset: 600,
+      ease: "linear",
+      duration: 1000,
+      align: "top"
+    });
+  };
 
-scrollDown=()=>{
-scrollToElement('#content',{
-   offset: 0,
-   ease: 'linear',
-    duration: 1000,
-    align : "middle"
-});};
-
-scrollUp=()=>{
-window.scrollTo(0,0);
-}
+  scrollUp = () => {
+    window.scrollTo(0, 0);
+  };
 
   render() {
     return (
       <div className="App">
         {this.returnNavigation()}
-       <div id="content"> {this.state.activeTab === "Home" && this.returnMainVideo()}
-        {this.state.activeTab === "Videos" && this.returnMainVideo()}
-        {this.state.activeTab === "About" && <About />}
-        {this.state.activeTab === "Clients" && <Clients />}
-        {this.state.activeTab === "Contact" && <Contact />}
-</div>
+        <div id="content">
+          {" "}
+          {this.state.cover === true && this.returnMainVideoStart()}
+          {this.state.activeTab === "Videos" && <MiniVideos />}
+          {this.state.activeTab === "About" && <About />}
+          {this.state.activeTab === "Clients" && <Clients />}
+          {this.state.activeTab === "Contact" && <Contact />}
+        </div>
         <div id="myModal" className="modal">
           <span className="close">&times;</span>
           <div className="modal-content" />

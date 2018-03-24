@@ -4,9 +4,9 @@ import MyListItem from "./Item"
 
 
 // functional stateless component
-const MiniVideos = ({ list }) =>
+const MiniVideos = ({ list}) =>
   <div className="list">
-    {list.map(item => <div className="list-row" key={item.objectID}>
+    {list.map(item => <div className="list-row" key={item}>
       <a href={item.url}>{item.title}</a>
     </div>)}
   </div>
@@ -17,7 +17,7 @@ class List extends React.Component {
     const { list } = this.props;
     return (
       <div className="list">
-        {list.map(item => <div className="list-row" key={item.objectID}>
+        {list.map(item => <div className="list-row" key={item}>
           <a href={item.url}>{item.title}</a>
         </div>)}
       </div>
