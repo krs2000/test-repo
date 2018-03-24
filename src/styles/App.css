@@ -105,7 +105,7 @@ nav .mobileNav {
   width: 80px;
   background-color: white;
   z-index: 99;
-  border-bottom: 2px solid white; }
+  border: 1px solid white; }
 
 nav .mobileNav input + label {
   position: fixed;

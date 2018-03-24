@@ -48,11 +48,12 @@ h2 {
   display: flex;
   justify-content: center;
   .mainVideoCotainer {
-    height: 100vh;
-    width:100vw;
+ 
+    height: 110vh;
+   
     overflow: hidden;
     .mainVideo {
-      height: 120vh;
+        height: 110vh;
       width: auto;
     }
   }
@@ -68,7 +69,7 @@ h2 {
     padding: 5%;
     display:flex;
     flex-wrap:wrap;
-    width:100%;
+    width:auto;
 
   }
   .arrow {

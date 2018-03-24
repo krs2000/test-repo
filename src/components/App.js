@@ -31,9 +31,9 @@ class App extends Component {
           onClick={() => {
             this.setState({ activeTab: "Home" });
           }}
-        /></div>
-  
-        <div className="mobileNav">
+        />
+           <div className="mobileNav">
+        
           <input id="burger" type="checkbox" />
           <label htmlFor="burger">
             <span />
@@ -55,9 +55,11 @@ class App extends Component {
                 <a className="contactLink">Contact</a>
               </li>
             </ul>
-            <Footer/>
+         
           </div>
-        </div>
+        </div></div>
+  
+
       </nav>
     );
   };

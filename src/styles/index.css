@@ -38,11 +38,10 @@ h2 {
   display: flex;
   justify-content: center; }
   .cover .mainVideoCotainer {
-    height: 100vh;
-    width: 100vw;
+    height: 110vh;
     overflow: hidden; }
     .cover .mainVideoCotainer .mainVideo {
-      height: 120vh;
+      height: 110vh;
       width: auto; }
   .cover .mainVideouttonsContainer {
     height: auto;
@@ -55,7 +54,7 @@ h2 {
     padding: 5%;
     display: flex;
     flex-wrap: wrap;
-    width: 100%; }
+    width: auto; }
   .cover .arrow {
     margin-left: 20px;
     color: white; }
