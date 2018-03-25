@@ -3,16 +3,16 @@ import Arrow from "../img/arrow.png";
 import "../styles/App.css";
 import Video from "../img/cover.mp4";
 import Logo from "../img/logo.png";
-import Footer from "./footer";
+import {footer } from "./footer";
 // import MiniVideos from "./MiniVideos"
 import About from "./About";
-import Contact from "./Contact";
+import {Contact} from "./Contact";
 import Clients from "./Clients";
 // import {MyInfiniteScrollExample} from "./MiniVideoss"
 import MiniVideos from "./VideosContainer";
 import Sierakowice from "../img/mini/gminaSierakowice.jpg";
 import scrollToElement from "scroll-to-element";
-
+import {Footer} from "./footer";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -21,19 +21,17 @@ class App extends Component {
       cover: true
     };
 
-    
-      // this.scrollUp();
-      document.addEventListener("scroll", () =>{
-        if (this.state.activeTab = "Home" && this.state.cover === true) {
+    // this.scrollUp();
+    document.addEventListener("scroll", () => {
+      if ((this.state.activeTab = "Home" && this.state.cover === true)) {
         this.setState({
           activeTab: "Home-Videos"
-        });}   }
-      );
- 
+        });
+      }
+    });
   }
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   returnNavigation = () => {
     return (
@@ -42,29 +40,48 @@ class App extends Component {
           <img
             src={Logo}
             alt="logo"
+            className="mainLogo"
             onClick={() => {
               this.setState({ activeTab: "Home" });
             }}
           />
-          <div className="mobileNav">
+          <div
+            className="mobileNav"
+            onClick={e => {
+              var burger = document.getElementById("burger");
+              if (e.target == document.getElementsByClassName("mobileNav")[0]) {
+                if (burger.checked === false) {
+                  burger.checked = true;
+                } else {
+                  burger.checked = false;
+                }
+              }
+            }}
+          >
             <input id="burger" type="checkbox" />
             <label htmlFor="burger">
               <span />
               <span />
               <span />
             </label>
-            <div className="menuListContainer">
+            <div
+              className="menuListContainer"
+              onClick={event => event.preventDefault()}
+            >
               <ul>
-               <li>
+                <li>
                   <a
                     className="videosLink"
-                    onClick={() => {
+                    onClick={e => {
+                      e.preventDefault();
                       this.scrollUp();
-                      this.setState({ activeTab: "Home",
-                      cover:true });
+                      this.setState({
+                        activeTab: "Home",
+                        cover: true
+                      });
+
                       var burger = document.getElementById("burger");
                       burger.checked = false;
-                      console.log(this.state);
                     }}
                   >
                     Home
@@ -74,7 +91,7 @@ class App extends Component {
                   <a
                     className="videosLink"
                     onClick={() => {
-                      this.setState({ activeTab: "Videos" ,});
+                      this.setState({ activeTab: "Videos" });
                       var burger = document.getElementById("burger");
                       burger.checked = false;
                       console.log(this.state);
@@ -87,12 +104,13 @@ class App extends Component {
                   <a
                     className="aboutLink "
                     onClick={() => {
-                      this.setState({ activeTab: "About",
-                            cover: false });
+                      this.setState({
+                        activeTab: "About",
+                        cover: false
+                      });
                       var burger = document.getElementById("burger");
                       burger.checked = false;
-                         console.log(this.state);
-               
+                      console.log(this.state);
                     }}
                   >
                     About
@@ -103,8 +121,10 @@ class App extends Component {
                     className="clientsLink"
                     onClick={() => {
                       this.scrollUp();
-                      this.setState({ activeTab: "Clients",
-                            cover: false });
+                      this.setState({
+                        activeTab: "Clients",
+                        cover: false
+                      });
                       var burger = document.getElementById("burger");
                       burger.checked = false;
                       console.log(this.state);
@@ -117,22 +137,21 @@ class App extends Component {
                   <a
                     className="contactLink"
                     onClick={() => {
-                      this.setState({ activeTab: "Contact" ,
-                          cover: false});
+                      this.setState({
+                        activeTab: "Contact",
+                        cover: false
+                      });
                       var burger = document.getElementById("burger");
                       burger.checked = false;
-                   
                     }}
                   >
                     Contact
                   </a>
                 </li>
-             
-              </ul>
-           
+                           </ul>
+                            <Footer color="white"/>
 
             </div>
-
           </div>
         </div>
       </nav>
@@ -185,8 +204,12 @@ class App extends Component {
         {this.returnNavigation()}
         <div id="content">
           {" "}
-          {this.state.cover === true && (this.state.activeTab=== "Home" || this.state.activeTab=== "Home-Videos" )  && this.returnMainVideoStart()}
-          {(this.state.activeTab === "Videos" || this.state.activeTab === "Home-Videos") && <MiniVideos />}
+          {this.state.cover === true &&
+            (this.state.activeTab === "Home" ||
+              this.state.activeTab === "Home-Videos") &&
+            this.returnMainVideoStart()}
+          {(this.state.activeTab === "Videos" ||
+            this.state.activeTab === "Home-Videos") && <MiniVideos />}
           {this.state.activeTab === "About" && <About />}
           {this.state.activeTab === "Clients" && <Clients />}
           {this.state.activeTab === "Contact" && <Contact />}
@@ -195,7 +218,6 @@ class App extends Component {
           <span className="close">&times;</span>
           <div className="modal-content" />
         </div>
-
       </div>
     );
   }

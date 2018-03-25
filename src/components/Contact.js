@@ -1,11 +1,11 @@
 import React from 'react';
-import email from "../img/email.png";
-import mobile from "../img/phone.png";
+import email from "../img/emailIcon.png";
+import mobile from "../img/phoneIcon.png";
 
 
 
 
-    export default function Contact() {
+    export  const Contact =() => {
   return (
    <div className="contact">
    <h2>Get in toutch with us .</h2> 
@@ -17,9 +17,18 @@ import mobile from "../img/phone.png";
           <input type="submit" value="Send"/>
           </form>
          </div>
+       <Icons/>
+        </div>  
+  );
+};
+
+
+     export const  Icons=() => {
+  return (
+  
         <div className="contactIconsContainer">
         <img src={email} alt="email icon"/>contact@offbeat.com
         <img src={mobile} alt="email icon"/>798789798</div>
-        </div>  
+        
   );
 }

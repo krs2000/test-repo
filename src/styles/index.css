@@ -73,30 +73,34 @@ h2 {
   .videoList .upIcon {
     color: white;
     position: fixed;
-    bottom: 5%;
+    bottom: 20%;
     display: flex;
     justify-content: flex-end;
     right: 5%; }
   .videoList div {
+    overflow: hidden;
     width: 33.3vw;
     display: inline-block;
-    overflow: hidden;
-    vertical-align: middle;
-    text-align: center; }
-    .videoList div .miniVideo {
-      left: 50%;
-      margin-left: -40%;
+    text-align: center;
+    max-height: 60vh;
+    vertical-align: middle; }
+    .videoList div div {
       margin-bottom: -5%;
-      padding: 0;
-      max-height: 60vh;
-      align: middle;
+      top: 0;
       transition: 0.8s;
       opacity: 0.9;
       filter: grayscale(50%); }
+      .videoList div div .miniVideo {
+        left: 50%;
+        margin-left: -40%;
+        margin-bottom: -5%;
+        padding: 0;
+        max-height: 60vh; }
   .videoList:hover img {
     opacity: 0.8;
     filter: grayscale(80%); }
   .videoList:hover img:hover {
+    transition: 0.8s;
     opacity: 1;
     filter: grayscale(0); }
 
@@ -108,9 +112,11 @@ h2 {
   .clients .clientsContainer {
     display: flex;
     margin-top: 75px;
+    justify-content: flex-start;
+    align-items: center;
     flex-direction: column; }
     .clients .clientsContainer .images {
-      margin: 20vh 10vw 0 10vw;
+      margin: 10vh 10vw 0 10vw;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -129,24 +135,32 @@ h2 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: white; }
+  flex-wrap: wrap;
+  color: white;
+  width: 100vw; }
   .aboutContainer .aboutContent {
     display: flex;
-    align-items: center; }
-    .aboutContainer .aboutContent .aboutText {
-      margin: 5vh 15vw 0 5vw; }
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .aboutContainer .aboutContent h3 {
+      width: 70vw;
+      padding: 0 15vw; }
+    .aboutContainer .aboutContent article {
+      width: 70vw;
+      padding: 0 15vw; }
     .aboutContainer .aboutContent hr {
       border: none;
-      height: 2px;
+      height: 8px;
+      margin-left: 15vw;
+      margin-bottom: 1em;
       background-color: white;
-      width: 20%; }
-    .aboutContainer .aboutContent .photos {
-      margin: 5vh 0 0 15vw;
-      display: flex;
-      flex-direction: column; }
-      .aboutContainer .aboutContent .photos img {
-        margin: 1vh 0;
-        height: 20vh; }
+      width: 2em; }
+    .aboutContainer .aboutContent img {
+      margin: 1em 0;
+      max-width: 23.3vw;
+      padding: auto; }
 
 .contact {
   color: white;
@@ -169,7 +183,6 @@ h2 {
   justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color: black;
   cursor: pointer;
   color: white; }
   .footer div img {
@@ -178,6 +191,21 @@ h2 {
     margin: 2em;
     transition: all 0.2s ease-in-out; }
     .footer div img:hover {
+      opacity: 1;
+      transform: scale(1.15); }
+
+.footerWhite {
+  position: absolute;
+  bottom: 1em;
+  right: 1em; }
+  .footerWhite div {
+    background-color: white; }
+  .footerWhite div a img {
+    opacity: 0.5;
+    width: 10vw;
+    max-width: 64px;
+    transition: all 0.2s ease-in-out; }
+    .footerWhite div a img:hover {
       opacity: 1;
       transform: scale(1.15); }
 
@@ -305,7 +333,22 @@ input[type="submit"]:hover {
 
   .modal-content {
     margin: 50% auto;
-    /* 15% from the top and centered */ } }
+    /* 15% from the top and centered */ }
+
+  .aboutContainer .aboutContent img {
+    margin: 1em;
+    max-width: 70vw;
+    padding: auto; }
+    .aboutContainer .aboutContent img:nth-child(2) {
+      order: 2;
+      margin: 1em;
+      max-width: 70vw;
+      padding: auto; }
+    .aboutContainer .aboutContent img:nth-child(3) {
+      order: 3;
+      margin: 1em;
+      max-width: 70vw;
+      padding: auto; } }
 @media only screen and (max-device-width: 900px) {
   h2 {
     font-size: 40px; }
@@ -319,6 +362,21 @@ input[type="submit"]:hover {
     align-items: center;
     justify-content: center;
     flex-direction: row; }
+
+  .aboutContainer .aboutContent img {
+    margin: 1em;
+    max-width: 70vw;
+    padding: auto; }
+    .aboutContainer .aboutContent img:nth-child(2) {
+      order: 2;
+      margin: 1em;
+      max-width: 70vw;
+      padding: auto; }
+    .aboutContainer .aboutContent img:nth-child(3) {
+      order: 3;
+      margin: 1em;
+      max-width: 70vw;
+      padding: auto; }
 
   .modal-content {
     margin: 50% auto;

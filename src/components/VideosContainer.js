@@ -10,7 +10,8 @@ import boatAndBike from "../img/mini/boatAndBikeGdansk.jpg";
 import demo from "../img/mini/demoOffBeat.jpg";
 import worldIsShakeing from "../img/mini/worldIsShaking.jpg";
 import scrollToElement from "scroll-to-element";
-import Footer from "./footer";
+import {Footer} from "./footer";
+import {Icons} from "./Contact";
 // functional stateless component
 
 export default class MiniVideos extends Component {
@@ -77,6 +78,7 @@ scrollUp = () => {
 					);
 				})}
 				<Footer/>
+
 				<div className="upIcon" onClick={() => {
                
                 this.scrollUp();

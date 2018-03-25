@@ -17,7 +17,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center; }
-    nav .logo img {
+    nav .logo .mainLogo {
       width: 85%;
       min-width: 150px; }
 
@@ -58,7 +58,8 @@ nav .menuListContainer {
   z-index: 90;
   height: 0px; }
 nav input {
-  display: none; }
+  display: none;
+  padding: 30px; }
 nav input ~ div {
   background: white;
   position: fixed;
@@ -108,7 +109,8 @@ nav .mobileNav {
   width: 80px;
   background-color: white;
   z-index: 99;
-  border: 1px solid white; }
+  border: 1px solid white;
+  cursor: pointer; }
 
 nav .mobileNav input + label {
   position: fixed;
