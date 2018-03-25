@@ -127,8 +127,12 @@ class App extends Component {
                     Contact
                   </a>
                 </li>
+             
               </ul>
+           
+
             </div>
+
           </div>
         </div>
       </nav>
@@ -191,7 +195,7 @@ class App extends Component {
           <span className="close">&times;</span>
           <div className="modal-content" />
         </div>
-    {/*    <Footer />*/}
+
       </div>
     );
   }
