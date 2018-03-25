@@ -38,7 +38,8 @@ h2 {
   display: flex;
   justify-content: center; }
   .cover .mainVideoCotainer {
-    height: 120vh;
+    height: 110vh;
+    width: 100vw;
     overflow: hidden; }
     .cover .mainVideoCotainer .mainVideo {
       height: 120vh;
@@ -66,18 +67,27 @@ h2 {
     padding: 15px 25px; }
 
 .videoList {
-  width: 100vw;
+  width: 99.9vw;
   column-gap: 0;
   column-count: 3; }
+  .videoList .upIcon {
+    color: white;
+    position: fixed;
+    bottom: 5%;
+    display: flex;
+    justify-content: flex-end;
+    right: 5%; }
   .videoList div {
-    width: 33.33vw;
+    width: 33.3vw;
     display: inline-block;
-    overflow: hidden; }
-    .videoList div img {
-      display: table-cell;
-      vertical-align: middle;
-      text-align: center;
-      padding: 0 0.2em;
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: center; }
+    .videoList div .miniVideo {
+      left: 50%;
+      margin-left: -20%;
+      margin-bottom: -5%;
+      padding: 0;
       max-height: 50vh;
       align: middle;
       transition: 0.8s;
@@ -153,20 +163,20 @@ h2 {
       width: 32px;
       margin: 5vh 1vw; }
 
-.footer {
+.footer div {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
   background-color: black;
   cursor: pointer;
   color: white; }
-  .footer img {
+  .footer div img {
     opacity: 0.9;
     width: 64px;
-    margin: 30px 30px;
+    margin: 3em;
     transition: all 0.2s ease-in-out; }
-    .footer img:hover {
+    .footer div img:hover {
       opacity: 1;
       transform: scale(1.15); }
 

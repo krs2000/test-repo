@@ -44,8 +44,8 @@ h2 {
   display: flex;
   justify-content: center;
   .mainVideoCotainer {
-    height: 120vh;
-
+    height: 110vh;
+    width:100vw;
     overflow: hidden;
     .mainVideo {
       height: 120vh;
@@ -88,7 +88,7 @@ h2 {
   // flex-direction: column;
   // flex-wrap: wrap;
   // height: 100vw;
-  width: 100vw;
+  width: 99.9vw;
   // max-height: 1100px;
   // font-size: 0;
  column-gap:0;
@@ -96,18 +96,29 @@ h2 {
 
   // column-fill: auto;
   // column-span: all; 
-
+.upIcon{
+  color:white;
+    position:fixed;
+    bottom:5%;
+  display: flex;
+  justify-content:flex-end;
+right: 5%;
+ }
   div {
-
-
-     width: 33.33vw;
+&.miniVideoContainer{}
+     
+     width: 33.3vw;
      display: inline-block;
      overflow: hidden;
-    img{
-      display:table-cell;
-  vertical-align:middle;
+      vertical-align:middle;
    text-align:center;
-  padding:0 0.2em;
+
+    .miniVideo{
+left: 50%;
+  margin-left: -20%;
+margin-bottom: -5%;
+ 
+  padding:0;
   max-height:50vh;
    align:middle;
     transition: 0.8s;
@@ -123,6 +134,8 @@ h2 {
     opacity: 1;
        filter: grayscale(0);
   }
+
+
 }
 
 // /* fallback for earlier versions of Firefox */
@@ -252,26 +265,29 @@ h2 {
   }
 }
 
-.footer {
+.footer div{
+  
   display: flex;
-  align-items: center;
-  justify-content: center;
- flex-direction:column;
+  align-items: flex-start;
+  justify-content: flex-start;
+ flex-direction: column;
   background-color: black;
   cursor: pointer;
   color: white;
-
-
+     
   img {
     opacity: 0.9;
     width: 64px;
-    margin: 30px 30px;
+    margin: 3em;
     transition: all 0.2s ease-in-out;
+
     &:hover {
       opacity: 1;
       transform: scale(1.15);
     }
   }
+
+
 }
 
 /////////////////////////////   FORM  //////////////////////////////////////

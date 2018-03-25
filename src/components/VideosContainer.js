@@ -42,8 +42,14 @@ export default class MiniVideos extends Component {
 		});
 	};
 
-	componentDidUpdate() {
+
+scrollUp = () => {
+    window.scrollTo(0, 0);
+  };
+
+	componentDidMount() {
 		if (this.state.count === this.state.videosImages.length - 1) {
+
 			this.scrollDown();
 		}
 	}
@@ -54,7 +60,7 @@ export default class MiniVideos extends Component {
 				{this.state.videosImages.map(item => {
 					return (
 						<div className="miniVideoConatainer">
-							<img
+						<div>	<img
 								data-id="src"
 								key={`mini-${item}`}
 								className="miniVideo"
@@ -67,10 +73,18 @@ export default class MiniVideos extends Component {
 									console.log(this.state.count);
 								}}
 							/>
-						</div>
+						</div></div>
 					);
 				})}
 				<Footer/>
+				<div className="upIcon" onClick={() => {
+               
+                this.scrollUp();
+              }}>
+
+			
+				<i className="fa fa-arrow-circle-up  fa-4x pulse" />
+			</div>
 			</div>
 		);
 	}

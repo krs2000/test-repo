@@ -13,7 +13,7 @@ import Insta from "../img/insta.png";
         <a href="https://www.youtube.com/channel/UCc5xYdSn1EX96F1cjuGk45Q"><img src={YT} alt="yt"/></a>
          <a href="https://www.instagram.com/lipalipsky/"><img src={Insta} alt="insta"/></a>
     </div>
-
+    
     </footer>
   );
 }

@@ -20,15 +20,19 @@ class App extends Component {
       activeTab: "Home",
       cover: true
     };
-  }
-  componentDidMount() {
-    if ((this.state.activeTab = "Home" && this.state.cover === true)) {
-      document.addEventListener("scroll", () =>
+
+    
+      // this.scrollUp();
+      document.addEventListener("scroll", () =>{
+        if (this.state.activeTab = "Home" && this.state.cover === true) {
         this.setState({
           activeTab: "Home-Videos"
-        })
+        });}   }
       );
-    }
+ 
+  }
+
+  componentDidMount() {
   }
 
   returnNavigation = () => {
@@ -60,6 +64,7 @@ class App extends Component {
                       cover:true });
                       var burger = document.getElementById("burger");
                       burger.checked = false;
+                      console.log(this.state);
                     }}
                   >
                     Home
@@ -72,7 +77,7 @@ class App extends Component {
                       this.setState({ activeTab: "Videos" ,});
                       var burger = document.getElementById("burger");
                       burger.checked = false;
-                      this.scrollDown();
+                      console.log(this.state);
                     }}
                   >
                     Videos
@@ -86,7 +91,8 @@ class App extends Component {
                             cover: false });
                       var burger = document.getElementById("burger");
                       burger.checked = false;
-                      this.scrollDown();
+                         console.log(this.state);
+               
                     }}
                   >
                     About
@@ -96,11 +102,12 @@ class App extends Component {
                   <a
                     className="clientsLink"
                     onClick={() => {
+                      this.scrollUp();
                       this.setState({ activeTab: "Clients",
                             cover: false });
                       var burger = document.getElementById("burger");
                       burger.checked = false;
-                      this.scrollDown();
+                      console.log(this.state);
                     }}
                   >
                     Clients
@@ -114,7 +121,7 @@ class App extends Component {
                           cover: false});
                       var burger = document.getElementById("burger");
                       burger.checked = false;
-                      this.scrollDown();
+                   
                     }}
                   >
                     Contact
@@ -143,8 +150,8 @@ class App extends Component {
             <div
               className="arrow"
               onClick={() => {
-                this.setState({ activeTab: "Videos" });
-                this.scrollDown(), 1000;
+                this.setState({ activeTab: "Home-Videos" });
+                this.scrollDown();
               }}
             >
               <i className="fa fa-arrow-circle-down  fa-4x pulse" />
