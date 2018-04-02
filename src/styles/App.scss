@@ -11,7 +11,7 @@ nav {
   align-items:center;
   z-index: 11;
   width:20vw;
-   min-width:200px;
+   min-width:170px;
    min-height:64px;
   padding: 5px 90px 5px 10px;
   border:1px solid black;
@@ -98,6 +98,7 @@ nav {
     align-items: center;
     justify-content: center;
     > ul {
+      padding:0;
       align-items: center;
       justify-content: center;
       display: flex;

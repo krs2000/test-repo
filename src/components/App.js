@@ -214,10 +214,7 @@ class App extends Component {
           {this.state.activeTab === "Clients" && <Clients />}
           {this.state.activeTab === "Contact" && <Contact />}
         </div>
-        <div id="myModal" className="modal">
-          <span className="close">&times;</span>
-          <div className="modal-content" />
-        </div>
+       
       </div>
     );
   }

@@ -81,44 +81,49 @@ h2 {
 
 .videoList {
   width: 99.9vw;
-  column-gap: 0;
-  column-count: 3;
-  .upIcon {
-    color: white;
-    position: fixed;
-    bottom: 20%;
-    display: flex;
-    justify-content: flex-end;
-    right: 5%;
-  }
-   div {
+
+
+  .miniVideoConatainer {
     overflow: hidden;
     width: 33.3vw;
     display: inline-block;
-text-align: center;
-    max-height: 60vh;
-vertical-align: middle;
-
-  div  {
-
+    text-align: center;
+    max-height: 40vh;
+    vertical-align: middle;
+    cursor: pointer;
+    position:relative;
+    .miniVideo {
       margin-bottom: -5%;
-    top:0;
-
-     
-    
+      top: 0;
       transition: 0.8s;
       opacity: 0.9;
       filter: grayscale(50%);
-      .miniVideo {
-    left: 50%;
-    margin-left: -40%;
-    margin-bottom: -5%;
-    padding: 0;
-    max-height: 60vh
-   }
+      left: 50%;
+      margin-left: -40%;
+      margin-bottom: -5%;
+      padding: 0;
+      max-height: 60vh;
     }
+
+    span{
+      position:absolute;
+      color:white;
+      font-size: 2em;
+       margin: auto;
+        top: 40%; left: 0; bottom: 0; right: 0;
+    }
+
   }
 
+ .miniVideoConatainer:hover span.alt {
+    opacity: 1;
+ transition: 0.8s;
+
+  }
+  span{
+    opacity:0;
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  }
 
 
   &:hover img {
@@ -129,6 +134,14 @@ vertical-align: middle;
     transition: 0.8s;
     opacity: 1;
     filter: grayscale(0);
+  }
+    .upIcon {
+    color: white;
+    position: fixed;
+    bottom: 20%;
+    display: flex;
+    justify-content: flex-end;
+    right: 5%;
   }
 }
 
@@ -188,7 +201,7 @@ vertical-align: middle;
     }
     hr {
       border: none;
-      height: 8px;
+      height: 2px;
       margin-left: 15vw;
       margin-bottom: 1em;
       background-color: white;
@@ -226,20 +239,17 @@ vertical-align: middle;
 
 .footer div {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
   flex-wrap: wrap;
- 
   cursor: pointer;
   color: white;
-
   img {
     opacity: 0.9;
     width: 64px;
-    margin: 2em;
+    margin: 2em 1em;
     transition: all 0.2s ease-in-out;
-
     &:hover {
       opacity: 1;
       transform: scale(1.15);
@@ -247,37 +257,30 @@ vertical-align: middle;
   }
 }
 
-
-.footerWhite{ 
- 
-position:absolute;
-bottom:1em;
-right:1em;
-
+.footerWhite {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
 
   div {
- // display:flex;
-background-color: white;
-  // align-items: flex-start;
-  // justify-content: space-evenly;
-
- }
+    // display:flex;
+    background-color: white;
+    // align-items: flex-start;
+    // justify-content: space-evenly;
+  }
   // cursor: pointer;
-   
 
-
- div a img {
+  div a img {
     opacity: 0.5;
-    width:10vw;
-    max-width:64px;
+    width: 10vw;
+    max-width: 64px;
     transition: all 0.2s ease-in-out;
-      &:hover {
+    &:hover {
       opacity: 1;
       transform: scale(1.15);
     }
-}
-
   }
+}
 
 // }}
 
@@ -367,26 +370,16 @@ input[type="submit"]:hover {
 .modal {
   display: none;
   position: fixed;
-  z-index: 99;
+  z-index: 91;
   left: 0;
   top: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-}
-
-/* Modal Content/Box */
-
-.modal-content {
+  // overflow: auto;
   background-color: black;
-  margin: 5% auto;
-  width: auto;
-}
 
-/* The Close Button */
-
-.close {
+  .close {
+  z-index: 99;
   color: #aaa;
   position: fixed;
   right: 50px;
@@ -402,6 +395,18 @@ input[type="submit"]:hover {
   cursor: pointer;
 }
 
+}
+
+/* Modal Content/Box */
+
+.modal-content {
+  background-color: black;
+  margin: 5% auto;
+  width: auto;
+}
+
+
+
 .vimeoMovieContainer {
   $vv: 80vw;
   .vimeoMovie {
@@ -414,13 +419,9 @@ input[type="submit"]:hover {
 
 /////////////////////////////   SMALL SCREENS  //////////////////////////////////////
 @media only screen and (max-width: 900px) {
-  .videoList {
-    flex-direction: row;
-  }
-  .videoList {
-    column-count: 1;
 
-    div {
+  .videoList {
+    .miniVideoConatainer {
       width: 100vw;
     }
   }
@@ -464,9 +465,8 @@ input[type="submit"]:hover {
     font-size: 40px;
   }
   .videoList {
-    column-count: 1;
 
-    div {
+        .miniVideoConatainer {
       width: 100vw;
     }
   }
@@ -513,7 +513,7 @@ input[type="submit"]:hover {
     img {
       opacity: 0.9;
       width: 15vw;
-      margin: 2vh 2vw;
+      // margin: 2vh 1vw;
       &:hover {
         opacity: 1;
       }
