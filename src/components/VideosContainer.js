@@ -35,11 +35,13 @@ export default class MiniVideos extends Component {
 				},
 				{
 					name: ahmed,
-					alt: "Ahmet Killic in City of Angels (event video)"
+					alt: `Ahmet Killic in City of Angels 
+					(event video)`
 				},
 				{
 					name: twentySix,
-					alt: "L.I.P.A - 26 (music video)"
+					alt: `L.I.P.A - 26 
+					(music video)`
 				},
 				{
 					name: summer,

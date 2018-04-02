@@ -64,7 +64,8 @@ h2 {
     color: white;
     background-color: transparent;
     border: 2px solid white;
-    padding: 15px 25px; }
+    padding: 15px 25px;
+    cursor: pointer; }
 
 .videoList {
   width: 99.9vw; }
@@ -76,13 +77,21 @@ h2 {
     max-height: 40vh;
     vertical-align: middle;
     cursor: pointer;
-    position: relative; }
+    position: relative;
+    filter: grayscale(80%); }
+    .videoList .miniVideoConatainer:hover {
+      opacity: 1;
+      transition: 0.8s;
+      filter: grayscale(0); }
+      .videoList .miniVideoConatainer:hover img {
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1); }
     .videoList .miniVideoConatainer .miniVideo {
       margin-bottom: -5%;
       top: 0;
       transition: 0.8s;
       opacity: 0.9;
-      filter: grayscale(50%);
       left: 50%;
       margin-left: -40%;
       margin-bottom: -5%;
@@ -103,20 +112,14 @@ h2 {
   .videoList span {
     opacity: 0;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.3); }
-  .videoList:hover img {
-    opacity: 0.8;
-    filter: grayscale(80%); }
-  .videoList:hover img:hover {
-    transition: 0.8s;
-    opacity: 1;
-    filter: grayscale(0); }
   .videoList .upIcon {
     color: white;
     position: fixed;
     bottom: 20%;
     display: flex;
     justify-content: flex-end;
-    right: 5%; }
+    right: 5%;
+    cursor: pointer; }
 
 .clients {
   background-color: black;
@@ -356,6 +359,13 @@ input[type="submit"]:hover {
       max-width: 70vw;
       padding: auto; } }
 @media only screen and (max-device-width: 900px) {
+  .videoList {
+    width: 99.9vw; }
+    .videoList .miniVideoConatainer span {
+      opacity: 0.8;
+      font-size: 1.2em;
+      margin: 1em; }
+
   h2 {
     font-size: 40px; }
 

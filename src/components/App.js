@@ -13,6 +13,8 @@ import MiniVideos from "./VideosContainer";
 import Sierakowice from "../img/mini/gminaSierakowice.jpg";
 import scrollToElement from "scroll-to-element";
 import {Footer} from "./footer";
+
+const embed = "249434988";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -29,6 +31,12 @@ class App extends Component {
         });
       }
     });
+  }
+
+    openModal = (e) => {
+    // this.setState({modalIsOpen:true})
+    e.preventDefault();
+    if(document.getElementById("myShowreelModal")){ document.getElementById("myShowreelModal").style.display ="block";}
   }
 
   componentDidMount() {}
@@ -168,8 +176,8 @@ class App extends Component {
             </video>
           </div>
           <div className="mainVideouttonsContainer">
-            <button className="coverBtn">SHOWREEL</button>
-            <button className="coverBtn">CONTACT</button>
+            <button className="coverBtn" onClick={e=>this.openModal(e)}>SHOWREEL</button>
+            <button className="coverBtn"  onClick={()=>{this.setState({activeTab:"Contact"})}}>CONTACT</button>
             <div
               className="arrow"
               onClick={() => {
@@ -214,7 +222,21 @@ class App extends Component {
           {this.state.activeTab === "Clients" && <Clients />}
           {this.state.activeTab === "Contact" && <Contact />}
         </div>
-       
+          <div id="myShowreelModal" className="modal">
+          <div
+            className="close"
+            onClick={() =>
+              (document.getElementById("myShowreelModal").style.display =
+                "none")
+            }
+          >
+      
+             &times;
+          </div>
+
+          <div className="modal-content" />
+          <div className="vimeoMovieContainer fadeIn"><iframe className="vimeoMovie" src={`https://player.vimeo.com/video/${embed}?title=0&byline=0&portrait=0`}  frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe></div>
+        </div>
       </div>
     );
   }
