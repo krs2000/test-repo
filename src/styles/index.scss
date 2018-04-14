@@ -4,6 +4,7 @@ body {
   font-weight: 1;
   // overflow: hidden;
   background-color: black;
+text-transform: uppercase !important;
 }
 
 * {
@@ -77,6 +78,11 @@ h2 {
     border: 2px solid white;
     padding: 15px 25px;
     cursor:pointer;
+
+  &:hover{
+  
+       background:rgba(255,255,255, 0.3);
+  }
   }
 }
 
@@ -159,7 +165,7 @@ h2 {
 
   .clientsContainer {
     display: flex;
-    margin-top: 75px;
+    margin-top: 10vh;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
@@ -174,6 +180,9 @@ h2 {
         opacity: 0.9;
         height: 60px;
         margin: 20px 20px;
+        &:hover{
+    opacity:1;
+        }
       }
     }
   }
@@ -182,7 +191,7 @@ h2 {
 .aboutContainer {
   margin-top: 75px;
   color: white;
-  font-size: 0.8em;
+  font-size: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,20 +209,14 @@ h2 {
     h3 {
       width: 70vw;
       padding: 0 15vw;
+      text-align:center;
     }
     article {
       width: 70vw;
       padding: 0 15vw;
+      text-align:center;
     }
-    hr {
-      border: none;
-      height: 2px;
-      margin-left: 15vw;
-      margin-bottom: 1em;
-      background-color: white;
-
-      width: 2em;
-    }
+    
 
     img {
       margin: 1em 0;
@@ -328,6 +331,7 @@ h2 {
 
 .textData {
   height: 25vh;
+
 }
 
 textarea,
@@ -335,7 +339,8 @@ input::placeholder {
   color: black;
   font-size: 20px;
   text-align: center;
-  opacity: 0.8;
+ 
+  font-family: "Open Sans";
 }
 
 input[type="text"],
@@ -345,13 +350,14 @@ textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
+  background-color:white;
   border-radius: 2px;
   box-sizing: border-box;
   margin-top: 5px;
   margin-bottom: 5px;
   resize: vertical;
   font-size: 20px;
-  opacity: 0.9;
+ 
 }
 
 input[type="submit"] {
@@ -408,6 +414,7 @@ input[type="submit"]:hover {
   background-color: black;
   margin: 5% auto;
   width: auto;
+
 }
 
 .vimeoMovieContainer {
@@ -489,7 +496,29 @@ input[type="submit"]:hover {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+
+
   }
+
+  .footer div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  cursor: pointer;
+  color: white;
+  img {
+    opacity: 0.9;
+    width: 15vw;
+    margin: 1em 0.5em;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      opacity: 1;
+      transform: scale(1.15);
+    }
+  }
+}
 
   .aboutContainer {
     .aboutContent {
@@ -540,6 +569,7 @@ input[type="submit"]:hover {
 
   .formData {
     width: 80%;
+    font:"Open Sans";
   }
 
   .contactContainer {

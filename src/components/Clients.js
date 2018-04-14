@@ -22,11 +22,11 @@ export default function Clients() {
         <h2>Clients.</h2>
 
       <div className="images">
-        <img className="clientImg" src={a} alt="" />
-        <img className="clientImg" src={b} alt="" />
-        <img className="clientImg" src={c} alt="" />
-        <img className="clientImg" src={d} alt="" />
-        <img className="clientImg" src={e} alt="" />
+         <a href="https://amber-hotel.pl/en/" target="_blank"><img className="clientImg" src={a} alt="" /></a>
+         <a href="http://r4y.pl/" target="_blank"><img className="clientImg" src={b} alt="" /></a>
+        <a href="http://boatandbike.pl/" target="_blank"><img className="clientImg" src={c} alt="" /></a>
+         <a href="http://www.miastoaniolow.com.pl/" target="_blank"><img className="clientImg" src={d} alt="" /></a>
+         <a href="http://sierakowice.pl/" target="_blank"><img className="clientImg" src={e} alt="" /></a>
       </div>
     </div>
     </div>

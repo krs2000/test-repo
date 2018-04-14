@@ -13,55 +13,67 @@ import scrollToElement from "scroll-to-element";
 import { Footer } from "./footer";
 import { Icons } from "./Contact";
 // functional stateless component
-const embed = "249434988";
+
 export default class MiniVideos extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			
+			  embed : "249434988",
 			modalIsOpen: false,
 			videosImages: [
 				{
 					name: sierakowice,
-					alt: "Sierakowice Community"
+					alt: "Sierakowice Community",
+					src:"249434988"
+					//to change
 				},
 				{
 					name: hotel,
-					alt: "Hotel Amber (commercial)"
+					alt: "Hotel Amber (commercial)",
+					src:"233170709"
 				},
 				{
 					name: showreel,
-					alt: "Showreel"
+					alt: "Showreel",
+					src:"249434988"
+					//to change
 				},
 				{
 					name: ahmed,
 					alt: `Ahmet Killic in City of Angels 
-					(event video)`
+					(event video)`,
+					src:"233168772"
 				},
 				{
 					name: twentySix,
 					alt: `L.I.P.A - 26 
-					(music video)`
+					(music video)`,
+					src:"248575397"
 				},
 				{
 					name: summer,
-					alt: "May in City of Angels (event video)"
+					alt: "May in City of Angels (event video)",
+					src:"233164515"
 				},
 				{
 					name: blueNotes,
-					alt: "L.I.P.A - Blue notes (music video)"
+					alt: "L.I.P.A - Blue notes (music video)",
+					src:"249434988"
 				},
 				{
 					name: boatAndBike,
-					alt: "Boat and Bike (internet promotion video)"
+					alt: "Boat and Bike (internet promotion video)",
+					src: "233169986"
 				},
 				{
 					name: demo,
-					alt: "Offbeat motion (promo video)"
+					alt: "Offbeat motion (promo video)",
+					src:"233167640"
 				},
 				{
 					name: worldIsShakeing,
-					alt: "The world is shaking"
+					alt: "The world is shaking",
+					src:"233165733"
 				}
 			],
 			count: 0
@@ -77,9 +89,15 @@ export default class MiniVideos extends Component {
 		});
 	};
 
-	scrollUp = () => {
-		window.scrollTo(0, 0);
-	};
+    scrollUp = () => {
+    scrollToElement("#cover", {
+      offset: 0,
+      ease: "linear",
+      duration: 1000,
+      align: "middle"
+    });
+  };
+
 
 	componentDidMount() {
 		if (this.state.count === this.state.videosImages.length - 1) {
@@ -87,10 +105,13 @@ export default class MiniVideos extends Component {
 		}
 	}
 
-	openModal = (e) => {
-		// this.setState({modalIsOpen:true})
-		e.preventDefault();
+	openModal = (e,src) => {
+	e.preventDefault();
+		this.setState({embed: src},function(){	
 		if(document.getElementById("myModal")){ document.getElementById("myModal").style.display ="block";}
+		});
+
+		
 	}
 
 	render() {
@@ -101,7 +122,7 @@ export default class MiniVideos extends Component {
 						<div
 							className="miniVideoConatainer"
 							key={`mini-video-${item.name}`}
-							onClick={e=>this.openModal(e)}
+							onClick={e=>this.openModal(e ,item.src)}
 						>
 							<img
 								data-id="src"
@@ -146,8 +167,8 @@ export default class MiniVideos extends Component {
 						 &times;
 					</div>
 
-					<div className="modal-content" />
-					<div className="vimeoMovieContainer fadeIn"><iframe className="vimeoMovie" src={`https://player.vimeo.com/video/${embed}?title=0&byline=0&portrait=0`}  frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe></div>
+					<div className="modal-content" id="modal-content" />
+					<div className="vimeoMovieContainer fadeIn"><iframe className="vimeoMovie" src={`https://player.vimeo.com/video/${this.state.embed}?title=0&byline=0&portrait=0`}  frameBorder="0" webkitallowfullscreen="true"  mozallowfullscreen="true" allowFullScreen></iframe></div>
 				</div>
 			</div>
 		);

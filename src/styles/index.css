@@ -2,7 +2,8 @@ body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
   font-weight: 1;
-  background-color: black; }
+  background-color: black;
+  text-transform: uppercase !important; }
 
 * {
   -webkit-touch-callout: none;
@@ -66,6 +67,8 @@ h2 {
     border: 2px solid white;
     padding: 15px 25px;
     cursor: pointer; }
+    .cover .coverBtn:hover {
+      background: rgba(255, 255, 255, 0.3); }
 
 .videoList {
   width: 99.9vw; }
@@ -128,7 +131,7 @@ h2 {
   justify-content: center; }
   .clients .clientsContainer {
     display: flex;
-    margin-top: 75px;
+    margin-top: 10vh;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column; }
@@ -143,11 +146,13 @@ h2 {
         opacity: 0.9;
         height: 60px;
         margin: 20px 20px; }
+        .clients .clientsContainer .images img:hover {
+          opacity: 1; }
 
 .aboutContainer {
   margin-top: 75px;
   color: white;
-  font-size: 0.8em;
+  font-size: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,17 +168,12 @@ h2 {
     flex-wrap: wrap; }
     .aboutContainer .aboutContent h3 {
       width: 70vw;
-      padding: 0 15vw; }
+      padding: 0 15vw;
+      text-align: center; }
     .aboutContainer .aboutContent article {
       width: 70vw;
-      padding: 0 15vw; }
-    .aboutContainer .aboutContent hr {
-      border: none;
-      height: 2px;
-      margin-left: 15vw;
-      margin-bottom: 1em;
-      background-color: white;
-      width: 2em; }
+      padding: 0 15vw;
+      text-align: center; }
     .aboutContainer .aboutContent img {
       margin: 1em 0;
       max-width: 23.3vw;
@@ -262,7 +262,7 @@ input::placeholder {
   color: black;
   font-size: 20px;
   text-align: center;
-  opacity: 0.8; }
+  font-family: "Open Sans"; }
 
 input[type="text"],
 input[type="email"],
@@ -271,13 +271,13 @@ textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
+  background-color: white;
   border-radius: 2px;
   box-sizing: border-box;
   margin-top: 5px;
   margin-bottom: 5px;
   resize: vertical;
-  font-size: 20px;
-  opacity: 0.9; }
+  font-size: 20px; }
 
 input[type="submit"] {
   background-color: black;
@@ -377,6 +377,23 @@ input[type="submit"]:hover {
     justify-content: center;
     flex-direction: row; }
 
+  .footer div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    cursor: pointer;
+    color: white; }
+    .footer div img {
+      opacity: 0.9;
+      width: 15vw;
+      margin: 1em 0.5em;
+      transition: all 0.2s ease-in-out; }
+      .footer div img:hover {
+        opacity: 1;
+        transform: scale(1.15); }
+
   .aboutContainer .aboutContent img {
     margin: 1em;
     max-width: 70vw;
@@ -411,7 +428,8 @@ input[type="submit"]:hover {
     width: 7%; }
 
   .formData {
-    width: 80%; }
+    width: 80%;
+    font: "Open Sans"; }
 
   .contactContainer {
     font-size: 30px; }

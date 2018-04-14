@@ -195,12 +195,13 @@ class App extends Component {
 
   scrollDown = () => {
     scrollToElement("#cover", {
-      offset: 300,
+      offset: 1000,
       ease: "linear",
       duration: 1000,
       align: "middle"
     });
   };
+
 
   scrollUp = () => {
     window.scrollTo(0, 0);

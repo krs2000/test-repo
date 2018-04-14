@@ -18,7 +18,7 @@ export default function About() {
            <strong> Offbeat motion </strong>is a video production studio founded by Rafał
             Lipiński.
           </h3>
-          <hr />
+       
           <article>
             I am filmmaker based in the Netherlands, work worldwide. I
             specialize in commercials, music videos, promotional films,
@@ -29,10 +29,11 @@ export default function About() {
             my passion, most of my time a spend on constant developing skills. I
             always follow modern standards.
           </article>
-          <hr />
+       
           <article>
             <strong>
               {" "}
+              <br/>
               Every new project I treat as a challange. My main principle is the
               originality of each video. Better go and watch my work, you will
               see that every project is different and uniqe.
