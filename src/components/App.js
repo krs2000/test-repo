@@ -4,11 +4,9 @@ import "../styles/App.css";
 import Video from "../img/cover.mp4";
 import Logo from "../img/logo.png";
 import {footer } from "./footer";
-// import MiniVideos from "./MiniVideos"
 import About from "./About";
 import {Contact} from "./Contact";
 import Clients from "./Clients";
-// import {MyInfiniteScrollExample} from "./MiniVideoss"
 import MiniVideos from "./VideosContainer";
 import Sierakowice from "../img/mini/gminaSierakowice.jpg";
 import scrollToElement from "scroll-to-element";
@@ -43,8 +41,8 @@ class App extends Component {
 
   returnNavigation = () => {
     return (
-      <nav>
-        <div className="logo">
+      <nav class="">
+        <div className="logo text-center">
           <img
             src={Logo}
             alt="logo"

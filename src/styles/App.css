@@ -1,4 +1,5 @@
 nav {
+  opacity: 0.9;
   position: fixed;
   top: 0;
   right: 0;
@@ -9,17 +10,15 @@ nav {
   align-items: center;
   z-index: 11;
   width: 20vw;
-  min-width: 170px;
-  min-height: 64px;
+  min-width: 100vw;
+  min-height: 80px;
   padding: 5px 90px 5px 10px;
   border: 1px solid black; }
   nav .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+    width: 100vw;
+    padding-top: 9px; }
     nav .logo .mainLogo {
-      width: 85%;
-      min-width: 150px; }
+      height: 50px; }
 
 nav input + label {
   position: fixed;
@@ -155,5 +154,29 @@ nav .mobileNav input:checked + label span:first-child {
 nav .mobileNav input:checked + label span:last-child {
   opacity: 1;
   transform: rotate(-405deg); }
+
+@media only screen and (max-width: 768px) {
+  nav {
+    opacity: 0.9;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: black;
+    display: flex;
+    height: 70px;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 11;
+    width: 20vw;
+    min-width: 100vw;
+    min-height: 80px;
+    padding: 5px 90px 5px 10px;
+    border: 1px solid black; }
+    nav .logo {
+      width: 100vw;
+      padding-top: 9px; }
+      nav .logo .mainLogo {
+        height: 50px;
+        margin-right: 80px; } }
 
 /*# sourceMappingURL=App.css.map */

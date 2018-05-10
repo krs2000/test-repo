@@ -45,10 +45,10 @@ export default class MiniVideos extends Component {
 					src:"233168772"
 				},
 				{
-					name: twentySix,
-					alt: `L.I.P.A - 26 
-					(music video)`,
-					src:"248575397"
+					
+					name: blueNotes,
+					alt: "L.I.P.A - Blue notes (music video)",
+					src:"249434988"
 				},
 				{
 					name: summer,
@@ -56,9 +56,11 @@ export default class MiniVideos extends Component {
 					src:"233164515"
 				},
 				{
-					name: blueNotes,
-					alt: "L.I.P.A - Blue notes (music video)",
-					src:"249434988"
+				
+						name: demo,
+					alt: "Offbeat motion (promo video)",
+					src:"233167640"
+					
 				},
 				{
 					name: boatAndBike,
@@ -66,9 +68,10 @@ export default class MiniVideos extends Component {
 					src: "233169986"
 				},
 				{
-					name: demo,
-					alt: "Offbeat motion (promo video)",
-					src:"233167640"
+					name: twentySix,
+					alt: `L.I.P.A - 26 
+					(music video)`,
+					src:"248575397"
 				},
 				{
 					name: worldIsShakeing,
