@@ -118,8 +118,7 @@ export default class MiniVideos extends Component {
 	}
 
 	render() {
-		return (
-			<div className="videoList" id="masonry">
+		return (<div><div className="videoList" id="masonry">
 				{this.state.videosImages.map(item => {
 					return (
 						<div
@@ -135,6 +134,7 @@ export default class MiniVideos extends Component {
 							
 							
 									onLoad={() => {
+										
 									this.setState({
 										count: this.state.count + 1
 									});
@@ -173,6 +173,7 @@ export default class MiniVideos extends Component {
 					<div className="modal-content" id="modal-content" />
 					<div className="vimeoMovieContainer fadeIn"><iframe className="vimeoMovie" src={`https://player.vimeo.com/video/${this.state.embed}?title=0&byline=0&portrait=0`}  frameBorder="0" webkitallowfullscreen="true"  mozallowfullscreen="true" allowFullScreen></iframe></div>
 				</div>
+			</div>
 			</div>
 		);
 	}
