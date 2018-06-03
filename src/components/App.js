@@ -42,7 +42,7 @@ class App extends Component {
   returnNavigation = () => {
     return (
       <nav className="">
-        <div className="logo text-center">
+        <div className="logo text-center d-md-none">
           <img
             src={Logo}
             alt="logo"
@@ -53,6 +53,7 @@ class App extends Component {
           />
           <div
             className="mobileNav"
+
             onClick={e => {
               var burger = document.getElementById("burger");
               if (e.target === document.getElementsByClassName("mobileNav")[0]) {
@@ -159,6 +160,35 @@ class App extends Component {
 
             </div>
           </div>
+        </div>
+        <div className="d-md-flex d-none md-nav justify-content-center align-items-center">
+       
+        <img
+            src={Logo}
+            alt="logo"
+            className="mainLogoMd pr-5"
+            onClick={() => {
+              this.setState({ activeTab: "Home" });
+            }}
+          />
+     
+          <ul className="d-flex pr-5">
+            <li className="pr-5 pt-3" >
+              Home
+              </li>
+              <li className="pr-5 pt-3" >
+              About
+              </li>
+            <li className="pr-5 pt-3" >
+              Videos
+              </li>
+          <li className="pr-5 pt-3" >
+              Clients
+              </li>
+            <li className="pr-5 pt-3" >
+              Contact
+              </li>
+          </ul>
         </div>
       </nav>
     );

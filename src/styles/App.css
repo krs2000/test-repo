@@ -5,20 +5,19 @@ nav {
   right: 0;
   background-color: black;
   display: flex;
-  height: 70px;
   justify-content: flex-end;
   align-items: center;
   z-index: 11;
   width: 20vw;
   min-width: 100vw;
-  min-height: 80px;
-  padding: 5px 90px 5px 10px;
   border: 1px solid black; }
   nav .logo {
     width: 100vw;
     padding-top: 9px; }
     nav .logo .mainLogo {
       height: 50px; }
+  nav .mainLogoMd {
+    height: 34px; }
 
 nav input + label {
   position: fixed;

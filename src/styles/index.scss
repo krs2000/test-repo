@@ -8,6 +8,9 @@ body {
   background-size: 50px 50px;
   text-transform: uppercase !important; }
  
+  .App {
+    background-color:black;
+  }
 
 * {
   -webkit-touch-callout: none;
@@ -470,3 +473,17 @@ input[type="submit"]:hover {
   input[type="submit"] {
     padding: 20px 28px;
     font-size: 28px; } }
+
+
+    
+.md-nav {
+ ul{
+  list-style-type: none;
+
+  color:white;
+
+}
+
+
+
+}

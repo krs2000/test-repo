@@ -6,14 +6,13 @@ nav {
     right: 0;
     background-color: black;
     display: flex;
-    height: 70px;
+ 
     justify-content: flex-end;
     align-items: center;
     z-index: 11;
     width: 20vw;
     min-width: 100vw;
-    min-height: 80px;
-    padding: 5px 90px 5px 10px;
+
     border: 1px solid black; // border-radius: 5px;
     .logo {
         width: 100vw;
@@ -22,6 +21,9 @@ nav {
         .mainLogo {
             height: 50px;
         }
+    }
+    .mainLogoMd{
+        height: 34px;
     }
 }
 
