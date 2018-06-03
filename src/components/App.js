@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import Arrow from "../img/arrow.png";
+
 import "../styles/App.css";
 import Video from "../img/cover.mp4";
 import Logo from "../img/logo.png";
-import {footer } from "./footer";
+
 import About from "./About";
-import {Contact} from "./Contact";
+import { Contact } from "./Contact";
 import Clients from "./Clients";
 import MiniVideos from "./VideosContainer";
-import Sierakowice from "../img/mini/gminaSierakowice.jpg";
+
 import scrollToElement from "scroll-to-element";
-import {Footer} from "./footer";
+import { Footer } from "./footer";
 
 const embed = "249434988";
 class App extends Component {
@@ -23,7 +23,7 @@ class App extends Component {
 
     // this.scrollUp();
     document.addEventListener("scroll", () => {
-      if ((this.state.activeTab = "Home" && this.state.cover === true)) {
+      if ((this.state.activeTab === "Home" && this.state.cover === true)) {
         this.setState({
           activeTab: "Home-Videos"
         });
@@ -31,17 +31,17 @@ class App extends Component {
     });
   }
 
-    openModal = (e) => {
+  openModal = (e) => {
     // this.setState({modalIsOpen:true})
     e.preventDefault();
-    if(document.getElementById("myShowreelModal")){ document.getElementById("myShowreelModal").style.display ="block";}
+    if (document.getElementById("myShowreelModal")) { document.getElementById("myShowreelModal").style.display = "block"; }
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   returnNavigation = () => {
     return (
-      <nav class="">
+      <nav className="">
         <div className="logo text-center">
           <img
             src={Logo}
@@ -55,7 +55,7 @@ class App extends Component {
             className="mobileNav"
             onClick={e => {
               var burger = document.getElementById("burger");
-              if (e.target == document.getElementsByClassName("mobileNav")[0]) {
+              if (e.target === document.getElementsByClassName("mobileNav")[0]) {
                 if (burger.checked === false) {
                   burger.checked = true;
                 } else {
@@ -154,8 +154,8 @@ class App extends Component {
                     Contact
                   </a>
                 </li>
-                           </ul>
-                            <Footer color="white"/>
+              </ul>
+              <Footer color="white" />
 
             </div>
           </div>
@@ -174,8 +174,8 @@ class App extends Component {
             </video>
           </div>
           <div className="mainVideouttonsContainer">
-            <button className="coverBtn" onClick={e=>this.openModal(e)}>SHOWREEL</button>
-            <button className="coverBtn"  onClick={()=>{this.setState({activeTab:"Contact"})}}>CONTACT</button>
+            <button className="coverBtn" onClick={e => this.openModal(e)}>SHOWREEL</button>
+            <button className="coverBtn" onClick={() => { this.setState({ activeTab: "Contact" }) }}>CONTACT</button>
             <div
               className="arrow"
               onClick={() => {
@@ -221,7 +221,7 @@ class App extends Component {
           {this.state.activeTab === "Clients" && <Clients />}
           {this.state.activeTab === "Contact" && <Contact />}
         </div>
-          <div id="myShowreelModal" className="modal">
+        <div id="myShowreelModal" className="modal">
           <div
             className="close"
             onClick={() =>
@@ -229,12 +229,12 @@ class App extends Component {
                 "none")
             }
           >
-      
-             &times;
+
+            &times;
           </div>
 
           <div className="modal-content" />
-          <div className="vimeoMovieContainer fadeIn"><iframe className="vimeoMovie" src={`https://player.vimeo.com/video/${embed}?title=0&byline=0&portrait=0`}  frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe></div>
+          <div className="vimeoMovieContainer fadeIn"><iframe className="vimeoMovie" src={`https://player.vimeo.com/video/${embed}?title=0&byline=0&portrait=0`} frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe></div>
         </div>
       </div>
     );

@@ -8,39 +8,39 @@ export default function About() {
     <div className="aboutContainer">
       <h2> About</h2>
       <div className="aboutContent">
-  
-          <img src={camera} alt="camera oprerator" />
-          <img src={dron} alt="dron oprerator" />
-          <img src={forest} alt="camera forest" />
- 
-      
-          <h3>
-           <strong> Offbeat motion </strong>is a video production studio founded by Rafał
-            Lipiński.
+
+        <img src={camera} alt="camera oprerator" />
+        <img src={dron} alt="dron oprerator" />
+        <img src={forest} alt="camera forest" />
+
+
+        <h3>
+          <strong> Offbeat motion </strong>is a video production studio founded by Rafał
+           Lipiński.
           </h3>
-       
-          <article>
-            I am filmmaker based in the Netherlands, work worldwide. I
-            specialize in commercials, music videos, promotional films,
-            corporate films and event coverage. I take care of it all - starting
-            from script through arranging a set, ligthing, shooting, editing and
-            color grading. For bigger projects I organize and cooperate with
-            film crew. I don't treat making films as a work, cinematography is
-            my passion, most of my time a spend on constant developing skills. I
-            always follow modern standards.
+
+        <article>
+          I am filmmaker based in the Netherlands, work worldwide. I
+          specialize in commercials, music videos, promotional films,
+          corporate films and event coverage. I take care of it all - starting
+          from script through arranging a set, ligthing, shooting, editing and
+          color grading. For bigger projects I organize and cooperate with
+          film crew. I don't treat making films as a work, cinematography is
+          my passion, most of my time a spend on constant developing skills. I
+          always follow modern standards.
           </article>
-       
-          <article>
-            <strong>
-              {" "}
-              <br/>
-              Every new project I treat as a challange. My main principle is the
-              originality of each video. Better go and watch my work, you will
-              see that every project is different and uniqe.
+
+        <article>
+          <strong>
+            {" "}
+            <br />
+            Every new project I treat as a challange. My main principle is the
+            originality of each video. Better go and watch my work, you will
+            see that every project is different and uniqe.
             </strong>
-          </article>
-        </div>
+        </article>
       </div>
-  
+    </div>
+
   );
 }
