@@ -9,6 +9,8 @@ import blueNotes from "../img/mini/blueNotes.jpg";
 import boatAndBike from "../img/mini/boatAndBikeGdansk.jpg";
 import demo from "../img/mini/demoOffBeat.jpg";
 import worldIsShakeing from "../img/mini/worldIsShaking.jpg";
+import mamAwersje from "../img/mini/mamAwersje.jpg";
+import autumnAngels from "../img/mini/autumnAngels.jpg";
 import scrollToElement from "scroll-to-element";
 import { Footer } from "./footer";
 import { Icons } from "./Contact";
@@ -77,7 +79,17 @@ export default class MiniVideos extends Component {
 					name: worldIsShakeing,
 					alt: "The world is shaking",
 					src: "233165733"
-				}
+				},
+				{
+					name: mamAwersje,
+					alt: "L.I.P.A - Mam awersję (street video)",
+					src: "233165733"
+				},
+				{
+					name: autumnAngels,
+					alt: "autumn city of angels",
+					src: "233166754"
+				} 
 			],
 		};
 	}

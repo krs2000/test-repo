@@ -161,31 +161,56 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div className="d-md-flex d-none md-nav justify-content-center align-items-center">
-       
-        <img
+        <div className="d-md-flex d-none md-nav justify-content-center">
+
+          <img
             src={Logo}
             alt="logo"
-            className="mainLogoMd pr-5"
+            className="mainLogoMd mr-5"
             onClick={() => {
               this.setState({ activeTab: "Home" });
             }}
           />
-     
+
           <ul className="d-flex pr-5">
-            <li className="pr-5 pt-3" >
+            <li className="mr-5 pt-3" onClick={() => {
+              this.setState({
+                activeTab:  "Home",
+                cover: true
+              })
+            }}>
               Home
               </li>
-              <li className="pr-5 pt-3" >
+            <li className="mr-5 pt-3" onClick={() => {
+              this.setState({
+                activeTab: "About",
+                cover: false
+              })
+            }}>
               About
               </li>
-            <li className="pr-5 pt-3" >
+            <li className="mr-5 pt-3" onClick={() => {
+              this.setState({
+                activeTab: "Videos",
+                cover: false
+              })
+            }}>
               Videos
               </li>
-          <li className="pr-5 pt-3" >
+            <li className="mr-5 pt-3" onClick={() => {
+              this.setState({
+                activeTab: "Clients",
+                cover: false
+              })
+            }}>
               Clients
               </li>
-            <li className="pr-5 pt-3" >
+            <li className="mr-5 pt-3" onClick={() => {
+              this.setState({
+                activeTab: "Contact",
+                cover: false
+              })
+            }}>
               Contact
               </li>
           </ul>
