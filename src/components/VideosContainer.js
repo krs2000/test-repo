@@ -83,7 +83,7 @@ export default class MiniVideos extends Component {
 				{
 					name: mamAwersje,
 					alt: "L.I.P.A - Mam awersję (street video)",
-					src: "233165733"
+					src: "269695775"
 				},
 				{
 					name: autumnAngels,
@@ -155,6 +155,8 @@ export default class MiniVideos extends Component {
 						this.setState({ embed: "" })
 						document.getElementById("myModal").style.display =
 							"none";
+							document.getElementById("myModal").style.display =
+							"none";
 					}
 					}
 				>
@@ -163,7 +165,7 @@ export default class MiniVideos extends Component {
 					</div>
 
 				<div className="modal-content" id="modal-content" />
-				<div className="vimeoMovieContainer fadeIn"><iframe id="vimeoMoviePlayed" className="vimeoMovie" src={`https://player.vimeo.com/video/${this.state.embed}?title=0&byline=0&portrait=0`} frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe></div>
+				<div className="vimeoMovieContainer fadeIn">{ this.state.embed == "" ? "" : <iframe id="vimeoMoviePlayed" className="vimeoMovie" src={`https://player.vimeo.com/video/${this.state.embed}?title=0&byline=0&portrait=0`} frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe>}</div>
 			</div>
 		</div>
 		</div>
