@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: "Open Sans" , sans-serif;
   font-weight: 1;
-  background: black;
+  background-color: black !important;
   background-repeat: repeat;
   background-size: 50px 50px;
   text-transform: uppercase !important; }
@@ -105,7 +105,7 @@ h2 {
       transition: 0.8s;
       opacity: 0.9;
       left: 50%;
-      margin-left: -40%;
+    
       margin-bottom: -5%;
       padding: 0;
       max-height: 60vh; }
@@ -347,8 +347,12 @@ input[type="submit"]:hover {
 /* Modal Content/Box */
 .modal-content {
   background-color: black;
-  margin: 5% auto;
-  width: auto; }
+ 
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
 
 .vimeoMovieContainer .vimeoMovie {
   display: block;

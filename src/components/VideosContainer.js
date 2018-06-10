@@ -146,20 +146,16 @@ export default class MiniVideos extends Component {
 
 			<Footer />
 
-			<div
-				className="upIcon"
-				onClick={() => {
-					this.scrollUp();
-				}}
-			>
-				<i className="fa fa-arrow-circle-up  fa-4x pulse" />
-			</div>
+
 			<div id="myModal" className="modal">
 				<div
 					className="close"
-					onClick={() =>
-						(document.getElementById("myModal").style.display =
-							"none")
+					onClick={() =>{
+					
+						this.setState({ embed: "" })
+						document.getElementById("myModal").style.display =
+							"none";
+					}
 					}
 				>
 
@@ -167,7 +163,7 @@ export default class MiniVideos extends Component {
 					</div>
 
 				<div className="modal-content" id="modal-content" />
-				<div className="vimeoMovieContainer fadeIn"><iframe className="vimeoMovie" src={`https://player.vimeo.com/video/${this.state.embed}?title=0&byline=0&portrait=0`} frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe></div>
+				<div className="vimeoMovieContainer fadeIn"><iframe id="vimeoMoviePlayed" className="vimeoMovie" src={`https://player.vimeo.com/video/${this.state.embed}?title=0&byline=0&portrait=0`} frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe></div>
 			</div>
 		</div>
 		</div>
