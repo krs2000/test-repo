@@ -6,7 +6,7 @@ import forest from "../img/about/forest.jpg";
 export default function About() {
   return (
     <div className="aboutContainer">
-      <h2> About</h2>
+      <h2 className="d-md-none"> About</h2>
       <div className="aboutContent">
 
         <img src={camera} alt="camera oprerator" />

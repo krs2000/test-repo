@@ -18,7 +18,8 @@ class App extends Component {
     super(props);
     this.state = {
       activeTab: "Home-Videos",
-      cover: true
+      cover: true,
+      link:'0'
     };
 
     // this.scrollUp();
@@ -78,17 +79,18 @@ class App extends Component {
               <ul>
                 <li>
                   <a
-                    className="videosLink"
+                    className="videosLink" 
                     onClick={e => {
                       e.preventDefault();
                       this.scrollUp();
                       this.setState({
-                        activeTab: "Home",
+                        activeTab: "Home-Videos",
                         cover: true
                       });
 
                       var burger = document.getElementById("burger");
                       burger.checked = false;
+                      this.scrollUp();
                     }}
                   >
                     Home
@@ -97,11 +99,15 @@ class App extends Component {
                 <li>
                   <a
                     className="videosLink"
-                    onClick={() => {
-                      this.setState({ activeTab: "Videos" });
-                      var burger = document.getElementById("burger");
-                      burger.checked = false;
-                      console.log(this.state);
+                    
+                    onClick={(e) => {
+                      e.preventDefault();
+                      this.setState({
+                        activeTab: "Home-Videos",
+                        
+                      });
+                      this.scrollDown();
+                      console.log(this.state)
                     }}
                   >
                     Videos
@@ -117,7 +123,7 @@ class App extends Component {
                       });
                       var burger = document.getElementById("burger");
                       burger.checked = false;
-                      console.log(this.state);
+                     
                     }}
                   >
                     About
@@ -134,7 +140,7 @@ class App extends Component {
                       });
                       var burger = document.getElementById("burger");
                       burger.checked = false;
-                      console.log(this.state);
+                    
                     }}
                   >
                     Clients
@@ -173,42 +179,50 @@ class App extends Component {
           />
 
           <ul className="d-flex pr-5">
-            <li className="mr-5 pt-3" onClick={() => {
+            <li className={`mr-5 pt-3 ${this.state.link === '1' ? 'active':'' }`} onClick={() => {
               this.setState({
-                activeTab:  "Home",
-                cover: true
+                activeTab:  "Home-Videos",
+                cover: true,
+                link: '0'
               })
+              this.scrollUp();
             }}>
               Home
               </li>
-            <li className="mr-5 pt-3" onClick={() => {
+            <li className={`mr-5 pt-3 ${this.state.link === '2' ? 'active':'' }`} onClick={() => {
               this.setState({
                 activeTab: "About",
-                cover: false
+                cover: true,
+                link: '2'
               })
             }}>
               About
               </li>
-            <li className="mr-5 pt-3" onClick={() => {
-              this.setState({
-                activeTab: "Videos",
-                cover: false
+            <li className={`mr-5 pt-3 ${this.state.link === '3' ? 'active':'' }`}  onClick={() => {
+               this.setState({
+                activeTab:  "Home-Videos",
+                cover: true,
+                link:'0'
               })
+              this.scrollDown();
             }}>
               Videos
               </li>
-            <li className="mr-5 pt-3" onClick={() => {
+            <li className={`mr-5 pt-3 ${this.state.link === '4' ? 'active':'' }`} onClick={() => {
               this.setState({
                 activeTab: "Clients",
-                cover: false
+                cover: false,
+                link:'4'
               })
+           
             }}>
               Clients
               </li>
-            <li className="mr-5 pt-3" onClick={() => {
+            <li className={`mr-5 pt-3 ${this.state.link === '5' ? 'active':'' }`}  onClick={() => {
               this.setState({
                 activeTab: "Contact",
-                cover: false
+                cover: false,
+                link:'5'
               })
             }}>
               Contact

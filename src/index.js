@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import $ from 'jquery'; 
 import './styles/index.css';
 import './styles/App.css';
 import './styles/openSans.css';

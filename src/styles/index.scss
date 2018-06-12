@@ -6,7 +6,8 @@ body {
   background-color: black !important;
   background-repeat: repeat;
   background-size: 50px 50px;
-  text-transform: uppercase !important; }
+  text-transform: uppercase !important;
+  overflow-x : hidden; }
  
   .App {
     background-color:black;
@@ -154,13 +155,13 @@ h2 {
     h2{
       color:white;
     }
-    display: flex;
+   
     margin-top: 10vh;
-    justify-content: flex-start;
-    align-items: center;
+  
+   
     flex-direction: column; }
     .clients .clientsContainer .images {
-      margin: 10vh 10vw 0 10vw;
+      height:100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -214,7 +215,8 @@ h2 {
     margin: 75px; }
   .contact .contactIconsContainer {
     display: flex;
-    align-items: center; }
+    align-items: center;
+  height:100% }
     .contact .contactIconsContainer img {
       width: 32px;
       margin: 5vh 1vw; }
@@ -239,12 +241,19 @@ h2 {
 .footerWhite {
   position: absolute;
   bottom: 1em;
-  right: 1em; }
+  right: 1em;
+  display:flex;
+  justify-content:center;
+width: 100vw;
+background-color:white;
+ }
   .footerWhite div {
-    background-color: white; }
+    background-color: white; 
+ }
+
   .footerWhite div a img {
     opacity: 0.5;
-    width: 10vw;
+    width: 15vw;
     max-width: 64px;
     transition: all 0.2s ease-in-out; }
     .footerWhite div a img:hover {
@@ -420,7 +429,7 @@ input[type="submit"]:hover {
     color: white; }
     .footer div img {
       opacity: 0.9;
-      width: 15vw;
+      width: 10vw;
       margin: 1em 0.5em;
       transition: all 0.2s ease-in-out; }
       .footer div img:hover {
@@ -486,7 +495,7 @@ input[type="submit"]:hover {
 .md-nav {
   height:58px;
   .mainLogoMd{
-    margin-top:12px;
+    margin-top:8px;
   }
  ul{
  
@@ -503,6 +512,10 @@ input[type="submit"]:hover {
       -o-transition: color .2s ease-out, border-bottom-color .2s ease-out;
          transition: color .2s ease-out, border-bottom-color .2s ease-out;
     &:hover{
+      border-bottom: 1px solid white;
+      border-radius:1px;
+    }
+    &.active{
       border-bottom: 1px solid white;
       border-radius:1px;
     }

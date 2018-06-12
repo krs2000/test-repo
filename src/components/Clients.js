@@ -19,9 +19,9 @@ export default function Clients() {
     <div className="clients">
     <div className="clientsContainer">
    
-        <h2>Clients.</h2>
+        <h2 className="d-md-none pt-5 m-auto text-center">Clients.</h2>
 
-      <div className="images">
+      <div className="images d-flex flex-column flex-md-row  align-items-center justify-content-center">
          <a href="https://amber-hotel.pl/en/" target="_blank"><img className="clientImg" src={a} alt="" /></a>
          <a href="http://r4y.pl/" target="_blank"><img className="clientImg" src={b} alt="" /></a>
         <a href="http://boatandbike.pl/" target="_blank"><img className="clientImg" src={c} alt="" /></a>
