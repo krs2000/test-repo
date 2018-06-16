@@ -11,6 +11,20 @@ body {
 .App {
   background-color: black; }
 
+#loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100vw;
+  z-index: 999;
+  background-color: white; }
+  #loader .spinner {
+    height: 80px;
+    position: fixed;
+    left: calc(50vw - 40px);
+    top: 45%; }
+
 * {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -249,7 +263,7 @@ h2 {
 
 .footer div img {
   opacity: 0.9;
-  width: 64px;
+  width: 30px;
   margin: 2em 1em;
   transition: all 0.2s ease-in-out; }
 
@@ -525,7 +539,8 @@ input[type="submit"]:hover {
 .md-nav {
   height: 58px; }
   .md-nav .mainLogoMd {
-    margin-top: 8px; }
+    margin-top: 8px;
+    cursor: pointer; }
   .md-nav ul {
     list-style-type: none;
     transition: 1s;

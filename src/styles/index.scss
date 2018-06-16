@@ -13,6 +13,22 @@ body {
     background-color:black;
   }
 
+  #loader {
+    position:fixed;
+    left:0;
+    top:0;
+    height:100%;
+    width:100vw;
+    z-index:999;
+    background-color:white; 
+  
+  .spinner{
+    height:80px;
+    position:fixed;
+    left: calc(50vw - 40px);
+    top:45%;
+  }}
+
 * {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -231,7 +247,7 @@ h2 {
   color: white; }
   .footer div img {
     opacity: 0.9;
-    width: 64px;
+    width: 30px;
     margin: 2em 1em;
     transition: all 0.2s ease-in-out; }
     .footer div img:hover {
@@ -496,6 +512,7 @@ input[type="submit"]:hover {
   height:58px;
   .mainLogoMd{
     margin-top:8px;
+    cursor: pointer;
   }
  ul{
  

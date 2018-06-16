@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "../styles/App.css";
 import Video from "../img/cover.mp4";
 import Logo from "../img/logo.png";
+import Spinner from "../img/spinner.gif";
 
 import About from "./About";
 import { Contact } from "./Contact";
@@ -19,17 +20,17 @@ class App extends Component {
     this.state = {
       activeTab: "Home-Videos",
       cover: true,
-      link:'0'
+      link: '0'
     };
-
-    // this.scrollUp();
     document.addEventListener("scroll", () => {
-      if ((this.state.activeTab === "Home" && this.state.cover === true)) {
+      if ((this.state.activeTab === "Home-Videos" && this.state.cover === false)) {
         this.setState({
-          activeTab: "Home-Videos"
+          activeTab: "Home-Videos",
+          cover: true,
         });
       }
     });
+
   }
 
   openModal = (e) => {
@@ -38,7 +39,16 @@ class App extends Component {
     if (document.getElementById("myShowreelModal")) { document.getElementById("myShowreelModal").style.display = "block"; }
   }
 
-  componentDidMount() { }
+  componentDidMount() {
+    var video = document.getElementById("mainVideo");
+    var loader = document.getElementById("loader");
+    video.addEventListener('loadeddata', function() {
+      loader.style.display= 'none';
+   }, false);
+   
+
+   
+  }
 
   returnNavigation = () => {
     return (
@@ -49,7 +59,10 @@ class App extends Component {
             alt="logo"
             className="mainLogo"
             onClick={() => {
-              this.setState({ activeTab: "Home" });
+              this.setState({
+                activeTab: "Home",
+                cover: true
+              });
             }}
           />
           <div
@@ -79,36 +92,17 @@ class App extends Component {
               <ul>
                 <li>
                   <a
-                    className="videosLink" 
-                    onClick={e => {
-                      e.preventDefault();
-                      this.scrollUp();
-                      this.setState({
-                        activeTab: "Home-Videos",
-                        cover: true
-                      });
-
-                      var burger = document.getElementById("burger");
-                      burger.checked = false;
-                      this.scrollUp();
-                    }}
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
                     className="videosLink"
-                    
                     onClick={(e) => {
                       e.preventDefault();
                       this.setState({
-                        activeTab: "Home-Videos",
-                        
-                      });
-                      this.scrollDown();
-                      console.log(this.state)
-                    }}
+                        activeTab: "Videos",
+                        cover: true,
+                      }, this.scrollDown());
+                      var burger = document.getElementById("burger");
+                      burger.checked = false;
+                    }
+                    }
                   >
                     Videos
                   </a>
@@ -123,7 +117,7 @@ class App extends Component {
                       });
                       var burger = document.getElementById("burger");
                       burger.checked = false;
-                     
+
                     }}
                   >
                     About
@@ -140,7 +134,7 @@ class App extends Component {
                       });
                       var burger = document.getElementById("burger");
                       burger.checked = false;
-                    
+
                     }}
                   >
                     Clients
@@ -173,23 +167,23 @@ class App extends Component {
             src={Logo}
             alt="logo"
             className="mainLogoMd mr-5"
-            onClick={() => {
-              this.setState({ activeTab: "Home" });
+            onClick={e => {
+              e.preventDefault();
+              this.scrollUp();
+              this.setState({
+                activeTab: "Home-Videos",
+                cover: false
+              });
+
+              var burger = document.getElementById("burger");
+              burger.checked = false;
+              this.scrollUp();
             }}
           />
 
           <ul className="d-flex pr-5">
-            <li className={`mr-5 pt-3 ${this.state.link === '1' ? 'active':'' }`} onClick={() => {
-              this.setState({
-                activeTab:  "Home-Videos",
-                cover: true,
-                link: '0'
-              })
-              this.scrollUp();
-            }}>
-              Home
-              </li>
-            <li className={`mr-5 pt-3 ${this.state.link === '2' ? 'active':'' }`} onClick={() => {
+
+            <li className={`mr-5 pt-3 ${this.state.link === '2' ? 'active' : ''}`} onClick={() => {
               this.setState({
                 activeTab: "About",
                 cover: true,
@@ -198,31 +192,31 @@ class App extends Component {
             }}>
               About
               </li>
-            <li className={`mr-5 pt-3 ${this.state.link === '3' ? 'active':'' }`}  onClick={() => {
-               this.setState({
-                activeTab:  "Home-Videos",
-                cover: true,
-                link:'0'
+            <li className={`mr-5 pt-3 ${this.state.link === '3' ? 'active' : ''}`} onClick={() => {
+              this.setState({
+                activeTab: "Home-Videos",
+                cover: false,
+                link: '0'
               })
               this.scrollDown();
             }}>
               Videos
               </li>
-            <li className={`mr-5 pt-3 ${this.state.link === '4' ? 'active':'' }`} onClick={() => {
+            <li className={`mr-5 pt-3 ${this.state.link === '4' ? 'active' : ''}`} onClick={() => {
               this.setState({
                 activeTab: "Clients",
                 cover: false,
-                link:'4'
+                link: '4'
               })
-           
+
             }}>
               Clients
               </li>
-            <li className={`mr-5 pt-3 ${this.state.link === '5' ? 'active':'' }`}  onClick={() => {
+            <li className={`mr-5 pt-3 ${this.state.link === '5' ? 'active' : ''}`} onClick={() => {
               this.setState({
                 activeTab: "Contact",
                 cover: false,
-                link:'5'
+                link: '5'
               })
             }}>
               Contact
@@ -238,7 +232,9 @@ class App extends Component {
       <div>
         <section id="cover" className="cover">
           <div className="mainVideoCotainer">
-            <video autoPlay muted playsInline loop className="mainVideo">
+            <video autoPlay muted playsInline loop className="mainVideo" id="mainVideo"
+             
+            >
               <source src={Video} type="video/mp4" />
             </video>
           </div>
@@ -261,10 +257,10 @@ class App extends Component {
   };
 
   scrollDown = () => {
-    scrollToElement("#cover", {
-      offset: 1000,
+    scrollToElement("#masonry", {
+      offset: -100,
       ease: "linear",
-      duration: 1000,
+      duration: 500,
       align: "middle"
     });
   };
@@ -276,34 +272,39 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        {this.returnNavigation()}
-        <div id="content">
-          {" "}
-          {this.state.cover === true &&
-            (this.state.activeTab === "Home" ||
-              this.state.activeTab === "Home-Videos") &&
-            this.returnMainVideoStart()}
-          {(this.state.activeTab === "Videos" ||
-            this.state.activeTab === "Home-Videos") && <MiniVideos />}
-          {this.state.activeTab === "About" && <About />}
-          {this.state.activeTab === "Clients" && <Clients />}
-          {this.state.activeTab === "Contact" && <Contact />}
+      <div>
+        <div id="loader">
+        <img src={Spinner} className='spinner'/>
         </div>
-        <div id="myShowreelModal" className="modal">
-          <div
-            className="close"
-            onClick={() =>
-              (document.getElementById("myShowreelModal").style.display =
-                "none")
-            }
-          >
+        <div className="App">
+          {this.returnNavigation()}
+          <div id="content">
+            {" "}
+            {this.state.cover === true &&
+              (this.state.activeTab === "Home" ||
+                this.state.activeTab === "Home-Videos") &&
+              this.returnMainVideoStart()}
+            {(this.state.activeTab === "Videos" ||
+              this.state.activeTab === "Home-Videos") && <MiniVideos />}
+            {this.state.activeTab === "About" && <About />}
+            {this.state.activeTab === "Clients" && <Clients />}
+            {this.state.activeTab === "Contact" && <Contact />}
+          </div>
+          <div id="myShowreelModal" className="modal">
+            <div
+              className="close"
+              onClick={() =>
+                (document.getElementById("myShowreelModal").style.display =
+                  "none")
+              }
+            >
 
-            &times;
+              &times;
           </div>
 
-          <div className="modal-content" />
-          <div className="vimeoMovieContainer fadeIn"><iframe className="vimeoMovie" src={`https://player.vimeo.com/video/${embed}?title=0&byline=0&portrait=0`} frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe></div>
+            <div className="modal-content" />
+            <div className="vimeoMovieContainer fadeIn"><iframe className="vimeoMovie" src={`https://player.vimeo.com/video/${embed}?title=0&byline=0&portrait=0`} frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe></div>
+          </div>
         </div>
       </div>
     );
