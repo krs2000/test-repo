@@ -169,26 +169,38 @@ h2 {
   justify-content: center; }
   .clients .clientsContainer {
     h2{
+      font-size:2rem;
       color:white;
     }
-   
+    h3{
+      color:white;
+      text-decoration: none;
+      font-size:1rem;
+    
+    }
+   a{
+    opacity: 0.9;
+    text-decoration: none;
+    &:hover{
+      opacity:1;
+    }
+   }
     margin-top: 10vh;
   
    
     flex-direction: column; }
     .clients .clientsContainer .images {
-      height:100%;
+      height:50%;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: row;
       flex-wrap: wrap; }
       .clients .clientsContainer .images img {
-        opacity: 0.9;
+     
         height: 60px;
         margin: 20px 20px; }
-        .clients .clientsContainer .images img:hover {
-          opacity: 1; }
+     
 
 .aboutContainer {
   padding-top: 75px;
