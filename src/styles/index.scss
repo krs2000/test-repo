@@ -554,3 +554,13 @@ input[type="submit"]:hover {
 
 
 }
+
+.carouselContainer {
+  width:100vw;
+  a{
+    height:250px;
+    img{
+      width:230px;
+    }
+  }
+}

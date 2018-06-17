@@ -567,4 +567,11 @@ input[type="submit"]:hover {
         border-bottom: 1px solid white;
         border-radius: 1px; }
 
+.carouselContainer {
+  width: 100vw; }
+  .carouselContainer a {
+    height: 250px; }
+    .carouselContainer a img {
+      width: 230px; }
+
 /*# sourceMappingURL=index.css.map */
