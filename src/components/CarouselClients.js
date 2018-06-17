@@ -10,7 +10,7 @@ export default class extends React.Component {
     
     render() {
       return (
-        <div className="carouselContainer">
+        <div className="carouselContainer d-md-none">
         <Carousel className="Carousel">
        <a href="https://amber-hotel.pl/en/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><img className="clientImg mb-2" src={a} alt="" /><h3>Hotel Amber</h3></a>
          <a href="http://r4y.pl/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><img className="clientImg mb-2" src={b} alt="" /><h3>R4U</h3></a>

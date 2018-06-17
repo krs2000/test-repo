@@ -34,7 +34,7 @@ export default class Clients extends Component{
          <a href="http://sierakowice.pl/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><h3>Sierakowice Region</h3><img className="clientImg" src={e} alt="" /></a>
       </div>
   
-      <Carousel/>>
+      <Carousel/>
     </div>
     </div>
   );
