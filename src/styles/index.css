@@ -215,8 +215,20 @@ h2 {
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
-  color: white;
-  width: 100vw; }
+  color: white; }
+  .aboutContainer .aboutMainImg {
+    width: 100vw;
+    height: 700px;
+    min-width: 320px;
+    background-image: url("../img/about/camera.jpg");
+    background-repeat: no-repeat;
+    background-position: center; }
+  .aboutContainer .dronImgContainer .dronImg {
+    width: 450px;
+    height: 450px;
+    background-image: url("../img/about/dron.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%; }
 
 .aboutContainer .aboutContent {
   display: flex;
@@ -227,17 +239,10 @@ h2 {
   text-transform: capitalize; }
 
 .aboutContainer .aboutContent h3 {
-  width: 70vw;
   text-align: center; }
 
 .aboutContainer .aboutContent article {
-  width: 70vw;
   text-align: center; }
-
-.aboutContainer .aboutContent img {
-  margin: 1em 0;
-  max-width: 23.3vw;
-  padding: auto; }
 
 .contact {
   color: white;
@@ -573,5 +578,9 @@ input[type="submit"]:hover {
     height: 250px; }
     .carouselContainer a img {
       width: 230px; }
+
+@media only screen and (max-width: 768px) {
+  .aboutContainer .dronImgContainer .dronImg {
+    width: 100vw; } }
 
 /*# sourceMappingURL=index.css.map */

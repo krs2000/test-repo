@@ -212,7 +212,29 @@ h2 {
   flex-direction: column;
   flex-wrap: wrap;
   color: white;
-  width: 100vw; }
+
+.aboutMainImg{
+  width:100vw;
+  height:700px;
+  min-width:320px;
+  background-image: url("../img/about/camera.jpg");
+  background-repeat: no-repeat;
+
+  background-position: center; 
+}
+.dronImgContainer {
+  
+
+  .dronImg{
+    width:450px;
+    height:450px;
+    background-image: url("../img/about/dron.jpg");
+    background-repeat: no-repeat;
+  
+    background-position: 50% 50%; 
+  }
+}
+}
   .aboutContainer .aboutContent {
     display: flex;
     align-items: flex-start;
@@ -221,18 +243,17 @@ h2 {
     flex-wrap: wrap;
     text-transform: capitalize; }
     .aboutContainer .aboutContent h3 {
-      width: 70vw;
+
 
       text-align: center; }
     .aboutContainer .aboutContent article {
-      width: 70vw;
-  
+    
       text-align: center; }
     .aboutContainer .aboutContent img {
-      margin: 1em 0;
-      max-width: 23.3vw;
-      padding: auto; }
-
+      // margin: 1em 0;
+      // max-width: 23.3vw;
+      // padding: auto; }
+    }
 .contact {
   color: white;
   height: 100vh;
@@ -398,6 +419,9 @@ input[type="submit"]:hover {
   height: 46.511627907vw; }
 
 @media only screen and (max-width: 768px) {
+
+
+
   .videoList .miniVideoConatainer {
     width: 100vw; }
   .videoList .miniVideo {
@@ -563,4 +587,9 @@ input[type="submit"]:hover {
       width:230px;
     }
   }
+}
+
+@media only screen and (max-width: 768px) {
+  .aboutContainer .dronImgContainer .dronImg{
+  width: 100vw;}
 }
