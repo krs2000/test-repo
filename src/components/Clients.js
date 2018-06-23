@@ -9,7 +9,6 @@ import Carousel from './CarouselClients'
 
 
 
-
 // const events = {
 //   onDragged: function(event) {...},
 //   onChanged: function(event) {...}

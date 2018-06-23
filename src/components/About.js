@@ -12,7 +12,7 @@ export default class About extends React.Component {
 
     return (
       <div className="aboutContainer">
-        <h2 className="d-md-none"> About</h2>
+        <h2 className="d-md-none mt-5 mb-5"> About</h2>
         <div className="aboutContent">
           <div className="aboutMainImg "></div>
           {/* <img src={camera} alt="camera oprerator"/> */}

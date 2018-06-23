@@ -257,15 +257,13 @@ h2 {
 .contact {
   color: white;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column; }
+}
   .contact h2 {
-    margin: 75px; }
+   margin-top:59px;}
   .contact .contactIconsContainer {
     display: flex;
     align-items: center;
-  height:100% }
+  }
     .contact .contactIconsContainer img {
       width: 32px;
       margin: 5vh 1vw; }
@@ -581,6 +579,9 @@ input[type="submit"]:hover {
 
 .carouselContainer {
   width:100vw;
+  .arrow {
+    width:24px;
+  }
   a{
     height:250px;
     img{

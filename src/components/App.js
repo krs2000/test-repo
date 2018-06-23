@@ -60,10 +60,13 @@ class App extends Component {
             className="mainLogo"
             onClick={() => {
               this.setState({
+                cover: true,
                 activeTab: "Home",
-                cover: true
               });
-            }}
+           
+              this.scrollUp()
+            }
+        }
           />
           <div
             className="mobileNav"
@@ -172,7 +175,7 @@ class App extends Component {
               this.scrollUp();
               this.setState({
                 activeTab: "Home-Videos",
-                cover: false
+                cover: true
               });
 
               var burger = document.getElementById("burger");
