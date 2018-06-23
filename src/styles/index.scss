@@ -164,7 +164,7 @@ h2 {
 
 .clients {
   background-color: black;
-  height: 100vh;
+  height: calc(100vh - 94px);
   display: flex;
   justify-content: center; }
   .clients .clientsContainer {
@@ -203,7 +203,7 @@ h2 {
      
 
 .aboutContainer {
-  padding-top: 75px;
+  padding-top: 58px;
   color: white;
   font-size: 1em;
   display: flex;
@@ -256,7 +256,7 @@ h2 {
     }
 .contact {
   color: white;
-  height: 100vh;
+  height:calc(100vh - 94px);
 }
   .contact h2 {
    margin-top:59px;}

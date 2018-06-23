@@ -62,6 +62,7 @@ class App extends Component {
               this.setState({
                 cover: true,
                 activeTab: "Home",
+                link: '99'
               });
            
               this.scrollUp()
@@ -101,6 +102,7 @@ class App extends Component {
                       this.setState({
                         activeTab: "Videos",
                         cover: true,
+                   
                       }, this.scrollDown());
                       var burger = document.getElementById("burger");
                       burger.checked = false;
@@ -175,7 +177,8 @@ class App extends Component {
               this.scrollUp();
               this.setState({
                 activeTab: "Home-Videos",
-                cover: true
+                cover: true,
+                link: '99'
               });
 
               var burger = document.getElementById("burger");
@@ -199,7 +202,7 @@ class App extends Component {
               this.setState({
                 activeTab: "Home-Videos",
                 cover: false,
-                link: '0'
+                link: '3'
               })
               this.scrollDown();
             }}>
@@ -309,6 +312,7 @@ class App extends Component {
             <div className="vimeoMovieContainer fadeIn"><iframe className="vimeoMovie" src={`https://player.vimeo.com/video/${embed}?title=0&byline=0&portrait=0`} frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe></div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

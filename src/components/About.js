@@ -2,7 +2,7 @@ import React from "react";
 import camera from "../img/about/camera.jpg";
 import dron from "../img/about/dron.jpg";
 import forest from "../img/about/forest.jpg";
-import { Footer } from "./footer";
+
 export default class About extends React.Component {
   
 
@@ -57,7 +57,7 @@ export default class About extends React.Component {
             </div>
           </div>
         </div>
-        <Footer />
+   
       </div>
 
     );

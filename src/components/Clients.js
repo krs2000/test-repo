@@ -5,7 +5,7 @@ import c from "../img/Clients/3.png";
 import d from "../img/Clients/4.png";
 import e from "../img/Clients/5.png";
 import Carousel from './CarouselClients'
-
+import { Footer } from "./footer";
 
 
 
@@ -34,7 +34,9 @@ export default class Clients extends Component{
       </div>
   
       <Carousel/>
+ 
     </div>
+   
     </div>
   );
 }

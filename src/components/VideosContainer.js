@@ -12,7 +12,7 @@ import worldIsShakeing from "../img/mini/worldIsShaking.jpg";
 import mamAwersje from "../img/mini/mamAwersje.jpg";
 import autumnAngels from "../img/mini/autumnAngels.jpg";
 import scrollToElement from "scroll-to-element";
-import { Footer } from "./footer";
+
 import { Icons } from "./Contact";
 // functional stateless component
 
@@ -144,7 +144,7 @@ export default class MiniVideos extends Component {
 				);
 			})}
 
-			<Footer />
+		
 
 
 			<div id="myModal" className="modal">
