@@ -26,11 +26,11 @@ export default class Clients extends Component{
         <h2 className="d-md-none pt-5 pb-5 m-auto text-center">Clients</h2>
 
       <div className="images d-none d-md-flex flex-column flex-md-row  align-items-center justify-content-center">
-         <a href="https://amber-hotel.pl/en/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><h3>Hotel Amber</h3><img className="clientImg" src={a} alt="" /></a>
-         <a href="http://r4y.pl/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><h3>R4U</h3><img className="clientImg" src={b} alt="" /></a>
-        <a href="http://boatandbike.pl/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><h3>Boat & Bike</h3><img className="clientImg" src={c} alt="" /></a>
-         <a href="http://www.miastoaniolow.com.pl/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><h3>Miasto Aniołów</h3><img className="clientImg" src={d} alt="" /></a>
-         <a href="http://sierakowice.pl/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><h3>Sierakowice Region</h3><img className="clientImg" src={e} alt="" /></a>
+         <a href="https://amber-hotel.pl/en/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><img className="clientImg" src={a} alt="" /></a>
+         <a href="http://r4y.pl/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><img className="clientImg" src={b} alt="" /></a>
+        <a href="http://boatandbike.pl/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><img className="clientImg" src={c} alt="" /></a>
+         <a href="http://www.miastoaniolow.com.pl/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><img className="clientImg" src={d} alt="" /></a>
+         <a href="http://sierakowice.pl/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><img className="clientImg" src={e} alt="" /></a>
       </div>
   
       <Carousel/>
