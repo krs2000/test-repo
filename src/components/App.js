@@ -100,7 +100,7 @@ class App extends Component {
                     onClick={(e) => {
                       e.preventDefault();
                       this.setState({
-                        activeTab: "Videos",
+                        activeTab: "Home-Videos",
                         cover: true,
                    
                       }, this.scrollDown());
@@ -308,8 +308,8 @@ class App extends Component {
               &times;
           </div>
 
-            <div className="modal-content" />
-            <div className="vimeoMovieContainer fadeIn"><iframe className="vimeoMovie" src={`https://player.vimeo.com/video/${embed}?title=0&byline=0&portrait=0`} frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe></div>
+            <div className="modal-content " />
+            <div className="vimeoMovieContainer  fadeIn"><iframe className="vimeoMovie" src={`https://player.vimeo.com/video/${embed}?title=0&byline=0&portrait=0`} frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe></div>
           </div>
         </div>
         <Footer />

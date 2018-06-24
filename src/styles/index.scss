@@ -97,7 +97,7 @@ h2 {
       background: rgba(255, 255, 255, 0.3); }
 
 .videoList {
-  width: 99.9vw; }
+  width: 100vw; }
   .videoList .miniVideoConatainer {
     overflow: hidden;
     width: 33.3vw;
@@ -215,7 +215,7 @@ h2 {
 
 .aboutMainImg{
   width:100vw;
-  height:700px;
+  height:650px;
   min-width:320px;
   background-image: url("../img/about/camera.jpg");
   background-repeat: no-repeat;
@@ -400,25 +400,40 @@ input[type="submit"]:hover {
     text-decoration: none;
     cursor: pointer; }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: black;
- 
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content:center;
-}
 
-.vimeoMovieContainer .vimeoMovie {
-  display: block;
-  margin: 0 auto;
+
+.vimeoMovieContainer {
+  width:100vw;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .vimeoMovie {
+
   width: 80vw;
   height: 46.511627907vw; }
 
+  }
+
+
 @media only screen and (max-width: 768px) {
+  .videoList .miniVideoConatainer span p{
+ 
+    position:absolute;
+    bottom: 0px;
+    margin-bottom:10px;
+    font-weight:600;
+    line-height:20px;
+    word-wrap:wrap;
+  width:100%;
+    word-wrap: normal;
+  }
 
-
+  .videoList .miniVideoConatainer img {
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1); }
 
   .videoList .miniVideoConatainer {
     width: 100vw; }
@@ -430,9 +445,7 @@ input[type="submit"]:hover {
     justify-content: center;
     flex-direction: row; }
 
-  .modal-content {
-    margin: 50% auto;
-    /* 15% from the top and centered */ }
+
 
   .aboutContainer .aboutContent img {
     margin: 1em;
@@ -448,15 +461,26 @@ input[type="submit"]:hover {
       margin: 1em;
       max-width: 70vw;
       padding: auto; } }
+
+      @media screen and  (max-width: 768px) and (orientation : landscape) {
+        .videoList .miniVideoConatainer span {
+          background-size:30px;
+          p{
+          margin-bottom:0px;
+        }}
+      }
+
 @media only screen and (max-width: 768px) {
   .videoList {
-    width: 99.9vw; }
-    .videoList .miniVideoConatainer .miniVideo {
-      transform: scale(1.5); }
+    width:100vw; }
+    
     .videoList .miniVideoConatainer span {
       opacity: 0.8;
-      font-size: 1.2em;
-      margin: 1em; }
+      font-size: 1em;
+      margin: 1em; 
+    font-weight:400;
+    background-size:40px;
+  }
 
   h2 {
     font-size: 40px; }
@@ -502,7 +526,7 @@ input[type="submit"]:hover {
       padding: auto; }
 
   .modal-content {
-    margin: 50% auto;
+    // margin: 50% auto;
     /* 15% from the top and centered */ }
 
   footer {
@@ -591,6 +615,14 @@ input[type="submit"]:hover {
 }
 
 @media only screen and (max-width: 768px) {
+  .aboutContainer .aboutMainImg{
+    width:100vw;
+    height:400px;
+    background-position: -950px -350px;
+  }
+  .aboutContainer .dronImgContainer .dronImg{
+    background-position: -950px -100px;
+  }
   .aboutContainer .dronImgContainer .dronImg{
   width: 100vw;}
 }

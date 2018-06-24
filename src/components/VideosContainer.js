@@ -138,7 +138,7 @@ export default class MiniVideos extends Component {
 							alt={item.alt}
 						/>
 						<span className="alt" id={`mini-text-${item}`}>
-							{item.alt}{" "}
+						<p>{item.alt}{" "}</p>	
 						</span>
 					</div>
 				);
