@@ -12,7 +12,7 @@ import worldIsShakeing from "../img/mini/worldIsShaking.jpg";
 import mamAwersje from "../img/mini/mamAwersje.jpg";
 import autumnAngels from "../img/mini/autumnAngels.jpg";
 import scrollToElement from "scroll-to-element";
-import { Footer } from "./footer";
+
 import { Icons } from "./Contact";
 // functional stateless component
 
@@ -163,10 +163,10 @@ export default class MiniVideos extends Component {
 
 					&times;
 					</div>
-					<Footer/>
 				<div className="modal-content" id="modal-content" />
 				<div className="vimeoMovieContainer fadeIn">{ this.state.embed == "" ? "" : <iframe id="vimeoMoviePlayed" className="vimeoMovie" src={`https://player.vimeo.com/video/${this.state.embed}?title=0&byline=0&portrait=0`} frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe>}</div>
 			</div>
+				
 		</div>
 		</div>
 		);

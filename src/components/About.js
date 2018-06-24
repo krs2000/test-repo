@@ -25,11 +25,11 @@ export default class About extends React.Component {
             <div className="col-md-6">
               <div className="row m-0">
                 <div className="col-md-12  justify-content-center">
-                  <h3 className="col-12 col-md-8 ml-auto mt-5 mb-5  justify-content-start">
+                  <h3 className="col-12 col-md-8 ml-auto mt-5 mb-5  justify-content-start text-initial">
                     <strong> Offbeat motion </strong>is a video production studio founded by Rafał
                      Lipiński.
           </h3>
-                  <article className="col-12 col-md-8 ml-auto mb-3 mt-5">
+                  <article className="col-12 col-md-8 ml-auto mb-3 mt-5 text-left">
                     I am filmmaker based in the Netherlands, work worldwide. I
                     specialize in commercials, music videos, promotional films,
                     corporate films and event coverage. I take care of it all - starting
@@ -39,7 +39,7 @@ export default class About extends React.Component {
                     my passion, most of my time a spend on constant developing skills. I
                     always follow modern standards.
           </article>
-                  <article className="col-12 col-md-8 ml-auto mt-3 mb-5">
+                  <article className="col-12 col-md-8 ml-auto mt-3 mb-5 text-left">
                     <strong>
                       {" "}
                       <br />

@@ -8,17 +8,21 @@ import e from "../img/Clients/5.png";
 import r from "../img/r.png";
 import l from "../img/l.png";
 
+
+
 export default class extends React.Component {
-    
+
+
     render() {
       return (
         <div className="carouselContainer d-md-none">
-        <Carousel className="Carousel"
+        <Carousel className="Carousel" 
+        autoplay ="true"
          renderCenterLeftControls={({ previousSlide }) => (
-          <div onClick={previousSlide}><img className="arrow" src={l}/></div>
+          <div onClick={previousSlide}><img className="arrow"  src={l}/></div>
         )}
         renderCenterRightControls={({ nextSlide }) => (
-          <div onClick={nextSlide}><img className="arrow"  src={r}/></div>
+          <div onClick={nextSlide}><img className="arrow" id="arrow" src={r}/></div>
         )}>
        <a href="https://amber-hotel.pl/en/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><img className="clientImg mb-2" src={a} alt="" /></a>
          <a href="http://r4y.pl/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><img className="clientImg mb-2" src={b} alt="" /></a>

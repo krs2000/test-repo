@@ -107,7 +107,7 @@ h2 {
     vertical-align: middle;
     cursor: pointer;
     position: relative;
-    filter: grayscale(80%); }
+    filter: grayscale(30%); }
     .videoList .miniVideoConatainer:hover {
       opacity: 1;
       transition: 0.8s;
@@ -241,7 +241,7 @@ h2 {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    text-transform: capitalize; }
+    text-transform: initial; }
     .aboutContainer .aboutContent h3 {
 
 
@@ -255,6 +255,9 @@ h2 {
       // padding: auto; }
     }
 .contact {
+  display:flex;
+  justify-content:center;
+  
   color: white;
   padding-top: 58px;
   min-height: calc(100vh - 94px);
@@ -469,11 +472,16 @@ input[type="submit"]:hover {
       padding: auto; } }
 
       @media screen and  (max-width: 768px) and (orientation : landscape) {
-        .videoList .miniVideoConatainer span {
+        .videoList .miniVideoConatainer {
+          img{
+            transform:scale(1.3)
+          }
+          span {
           background-size:30px;
           p{
           margin-bottom:0px;
         }}
+      }
       }
 
 @media only screen and (max-width: 768px) {
