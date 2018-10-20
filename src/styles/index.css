@@ -608,3 +608,63 @@ input[type="submit"]:hover {
     width: 100vw; } }
 
 /*# sourceMappingURL=index.css.map */
+.slider-control-bottomcenter {
+  display:none;
+}
+
+.instaImgDiv {
+  position:relative;
+  height:200px;
+  overflow:hidden;
+  background-position: center;
+  background-color:black;
+  background-size: cover; 
+}
+
+.instaImgDiv::before {
+  opacity:0;
+  transition: 1s ease;
+  position:absolute;
+
+  content:'';
+  z-index:99;
+  width:100%;
+  height:100%;
+  background-repeat: no-repeat; 
+    background-image:   url("../img/insta.png");
+    background-position: center;
+    background-size:10%;
+
+
+}
+.instaImgDiv:hover::before {
+  opacity:0.9;
+
+/* position:absolute;
+content:'';
+background-color:black;
+width:100px;
+height:100px;
+z-index:99; */
+}
+
+.instaImg{
+  position:relative;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .instaImgDiv {
+    position:relative;
+    height:120px;
+  }
+  .instaImgDiv::before {
+    opacity:0.5;
+    background-size:30%;
+  }
+   }
+
+
+   .instabig {
+     width:200px;
+   }

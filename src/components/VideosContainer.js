@@ -11,6 +11,9 @@ import demo from "../img/mini/demoOffBeat.jpg";
 import worldIsShakeing from "../img/mini/worldIsShaking.jpg";
 import mamAwersje from "../img/mini/mamAwersje.jpg";
 import autumnAngels from "../img/mini/autumnAngels.jpg";
+import marrige from "../img/mini/marrige.jpg";
+import SandraDawid from "../img/mini/SandraDawid.jpg";
+import boatAndBike2018 from "../img/mini/boatAndBike2018.jpg";
 import scrollToElement from "scroll-to-element";
 
 import { Icons } from "./Contact";
@@ -20,14 +23,13 @@ export default class MiniVideos extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			embed: "249434988",
+			embed: "285693859",
 			modalIsOpen: false,
 			videosImages: [
 				{
 					name: sierakowice,
 					alt: "Sierakowice Community",
-					src: "249434988"
-					//to change
+					src: "284411742"
 				},
 				{
 					name: hotel,
@@ -35,10 +37,23 @@ export default class MiniVideos extends Component {
 					src: "233170709"
 				},
 				{
+					name: SandraDawid,
+					alt: "Sandra & Dawid (Thanks to parents - wedding)",
+					src: "284410391"
+				},	{
+					name: boatAndBike2018,
+					alt: "Boat & Bike 2018",
+					src: "285693076"
+				},
+				{
+					name: marrige,
+					alt: "Marriage anniversary (event coverage)",
+					src: "273362488"
+				} ,
+				{
 					name: showreel,
 					alt: "Showreel",
-					src: "249434988"
-					//to change
+					src: "285693859"
 				},
 				{
 					name: ahmed,
@@ -89,7 +104,9 @@ export default class MiniVideos extends Component {
 					name: autumnAngels,
 					alt: "autumn city of angels",
 					src: "233166754"
-				} 
+				} ,
+				
+			
 			],
 		};
 	}

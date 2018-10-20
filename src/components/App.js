@@ -9,11 +9,11 @@ import About from "./About";
 import { Contact } from "./Contact";
 import Clients from "./Clients";
 import MiniVideos from "./VideosContainer";
-
+import Instagram from "./CarouselInstagram";
 import scrollToElement from "scroll-to-element";
 import { Footer } from "./footer";
 
-const embed = "249434988";
+const embed = "285693859";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -295,6 +295,8 @@ class App extends Component {
             {this.state.activeTab === "About" && <About />}
             {this.state.activeTab === "Clients" && <Clients />}
             {this.state.activeTab === "Contact" && <Contact />}
+            {(this.state.activeTab === "Videos" ||
+              this.state.activeTab === "Home-Videos") && <Instagram/>} 
           </div>
           <div id="myShowreelModal" className="modal">
             <div

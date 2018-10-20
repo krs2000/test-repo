@@ -1,66 +1,89 @@
 import Carousel from 'nuka-carousel';
 import React from 'react';
-import a from "../img/Clients/1.png";
-import b from "../img/Clients/2.png";
-import c from "../img/Clients/3.png";
-import d from "../img/Clients/4.png";
-import e from "../img/Clients/5.png";
+
 import r from "../img/r.png";
 import l from "../img/l.png";
 import axios from 'axios'
-
+import instabig from "../img/instabig.png";
 
 export default class extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-    'data': []
+      'data': [],
+      loaded: false
     }
   }
 
-    
+
   componentWillMount() {
     this.fetchPhotos();
   }
 
-  fetchPhotos() {
+  fetchPhotos = () => {
     axios
       .get('https://api.instagram.com/v1/users/self/media/recent/?access_token=8280733643.1677ed0.437656397eff47c8bdb10050b411a35f')
       .then((res) => {
-        console.log(res.data.data);
         this.setState({
-          data : res.data.data
+          data: res.data.data,
+          loaded: true
         })
-        console.log(this.state)
       })
-      console.log(this.state)
   }
 
-    render() {
-      return (
-        <div className="carouselContainer d-md-none">
-        <Carousel className="Carousel" 
-        autoplay ="true"
-         renderCenterLeftControls={({ previousSlide }) => (
-          <div onClick={previousSlide}><img className="arrow"  src={l}/></div>
-        )}
-        renderCenterRightControls={({ nextSlide }) => (
-          <div onClick={nextSlide}><img className="arrow" id="arrow" src={r}/></div>
-        )}>
-        {
+  componentWillUnmount () {
+    this.setState({
+      loaded: false
+    })
+  }
 
-        }
-        {
 
-    this.state.data.lenght > 0 ?  <a href="https://amber-hotel.pl/en/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><img className="clientImg mb-2" src={this.state.data !== undefined ? this.state.data[0].images.standard_resolution.url : ''} alt="" /></a> : ''
-        }
+  render() {
+    return (
+      <div>
+     { this.state.loaded ? (
+      <div className="carouselContainer d-flex align-items-center  flex-column">
+ 
+     <img className="img-fluid instabig mt-4 mb-4" src={instabig} alt="instagram"/> 
+        <Carousel className="Carousel"
+          slidesToShow={5}
+          cellAlign="center"
+          cellSpacing={50}
+          className ="d-none d-md-block "
+          autoplay="1"
+          edgeEasing="easeOutCirc"
+          speed={5000}
+          renderCenterLeftControls={({ previousSlide }) => (
+            <div onClick={previousSlide}></div>
+          )}
+          renderCenterRightControls={({ nextSlide }) => (
+            <div onClick={nextSlide}></div>
+          )}
+        >
+          {      this.state.loaded && this.state.data.map(item =><a key={`insta-${item.name}`} href={item.link} target="_blank"> <div  style={ { backgroundImage: `url(${item.images.standard_resolution.url})` } } className="instaImgDiv d-flex justify-content-start align-items-start"></div></a>)
+          }
         </Carousel>
-        {
+        <Carousel className="Carousel"
+        className ="d-md-none"
+          slidesToShow={3}
+          autoplay= "1"
+          cellAlign="center"
+          cellSpacing={10}
+          edgeEasing="easeOutCirc"
+          speed={5000}
+          renderCenterLeftControls={({ previousSlide }) => (
+            <div onClick={previousSlide}></div>
+          )}
+          renderCenterRightControls={({ nextSlide }) => (
+            <div onClick={nextSlide}></div>
+          )}
+        >
+          {this.state.data.map(item =><a key={`insta-${item.name}`} href={item.link} target="_blank"> <div  style={ { backgroundImage: `url(${item.images.standard_resolution.url})` } } className="instaImgDiv d-flex justify-content-start align-items-start"></div></a>)
+          }
+        </Carousel>
 
-this.state.data.lenght > 0 ?  <a href="https://amber-hotel.pl/en/" target="_blank" className="d-flex flex-column align-items-center justify-content-center"><img className="clientImg mb-2" src={this.state.data !== undefined ? this.state.data[0].images.standard_resolution.url : ''} alt="" /></a> : ''
-    }
-        </div>
-      );
-    }
+      </div>) : ''  } </div>
+    );
   }
+}
